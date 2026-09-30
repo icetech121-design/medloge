@@ -1,132 +1,246 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Saved Houses - Medloge-Enugu</title>
+    <title>Saved Houses | Medloge-Enugu</title>
 
-    <link rel="stylesheet" href="ice.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
+    <header class="page-header">
+        <a href="Home.html">⬅Home</a>
 
-        <a href="Home.html">← Back</a>
-
-        <h1>Saved Houses</h1>
-
+        <h2>Saved Houses</h2>
+        <p>Keep track of properties you may want to inspect.</p>
     </header>
 
 
-    <main>
+    <main class="saved-main">
 
-        <section class="saved-introduction">
+        <section class="saved-intro">
 
-            <h2>Your Saved Houses ❤️</h2>
+            <div>
+                <span>SAVED PROPERTIES</span>
+                <h1>Your Shortlist</h1>
+                <p>
+                    Houses you save will appear here so you can
+                    compare them later.
+                </p>
+            </div>
+
+            <div class="saved-count">
+                <strong>2</strong>
+                <span>Saved</span>
+            </div>
+
+        </section>
+
+
+        <section class="saved-list">
+
+            <div class="section-heading">
+                <h2>Saved Houses</h2>
+                <span>2 properties</span>
+            </div>
+
+
+            <!-- SAVED HOUSE 1 -->
+
+            <article class="saved-house-card">
+
+                <div class="saved-house-image">
+
+                    <img
+                        src="images/house-main.jpg"
+                        alt="Modern student apartment"
+                    >
+
+                    <button
+                        type="button"
+                        class="saved-heart"
+                        aria-label="Remove house from saved houses"
+                    >
+                        ♥
+                    </button>
+
+                </div>
+
+
+                <div class="saved-house-content">
+
+                    <span class="listing-type">
+                        STUDENT APARTMENT
+                    </span>
+
+                    <h3>Modern Student Apartment</h3>
+
+                    <p class="saved-location">
+                        📍 Near UNTH, Enugu
+                    </p>
+
+
+                    <div class="saved-details">
+
+                        <span>🛏 2 Rooms</span>
+                        <span>💧 Water</span>
+                        <span>⚡ Electricity</span>
+
+                    </div>
+
+
+                    <div class="saved-house-bottom">
+
+                        <div>
+                            <p>Rental Price</p>
+                            <strong>Contact for Price</strong>
+                        </div>
+
+                        <a
+                            href="House-Details.html"
+                            class="button"
+                        >
+                            View House
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SAVED HOUSE 2 -->
+
+            <article class="saved-house-card">
+
+                <div class="saved-house-image">
+
+                    <img
+                        src="images/house-room.jpg"
+                        alt="Student room apartment"
+                    >
+
+                    <button
+                        type="button"
+                        class="saved-heart"
+                        aria-label="Remove house from saved houses"
+                    >
+                        ♥
+                    </button>
+
+                </div>
+
+
+                <div class="saved-house-content">
+
+                    <span class="listing-type">
+                        SELF CONTAIN
+                    </span>
+
+                    <h3>Student Self-Contain</h3>
+
+                    <p class="saved-location">
+                        📍 Enugu, near UNTH
+                    </p>
+
+
+                    <div class="saved-details">
+
+                        <span>🛏 1 Room</span>
+                        <span>💧 Water</span>
+                        <span>🔌 Power</span>
+
+                    </div>
+
+
+                    <div class="saved-house-bottom">
+
+                        <div>
+                            <p>Rental Price</p>
+                            <strong>Contact for Price</strong>
+                        </div>
+
+                        <a
+                            href="House-Details.html"
+                            class="button"
+                        >
+                            View House
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- EMPTY STATE -->
+
+        <section class="saved-empty">
+
+            <div class="saved-empty-icon">
+                ♡
+            </div>
+
+            <h2>No saved houses yet</h2>
 
             <p>
-                Houses you save will appear here so you can
-                easily find them again.
+                When you find a house you like, tap the heart
+                icon to save it here.
             </p>
 
-        </section>
-
-
-        <!-- Saved House 1 -->
-        <section class="saved-house-card">
-
-            <img
-                src="images/house-main.jpg"
-                alt="Comfortable student apartment"
+            <a
+                href="Find-House.html"
+                class="button"
             >
-
-            <h2>Comfortable Student Apartment</h2>
-
-            <p>📍 Area around UNTH</p>
-
-            <p>🏠 Self Contained</p>
-
-            <p>💰 Rent: Contact for Price</p>
-
-            <a href="House-Details.html">
-                View House
-            </a>
-
-            <button type="button">
-                Remove
-            </button>
-
-        </section>
-
-
-        <!-- Saved House 2 -->
-        <section class="saved-house-card">
-
-            <img
-                src="images/house-room.jpg"
-                alt="Student-friendly apartment"
-            >
-
-            <h2>Student-Friendly Apartment</h2>
-
-            <p>📍 Area around UNTH</p>
-
-            <p>🏠 Shared Apartment</p>
-
-            <p>💰 Rent: Contact for Price</p>
-
-            <a href="House-Details.html">
-                View House
-            </a>
-
-            <button type="button">
-                Remove
-            </button>
-
-        </section>
-
-
-        <!-- Empty State -->
-        <section class="empty-saved-houses">
-
-            <p>
-                ❤️ Your saved houses will appear here.
-            </p>
-
-            <a href="Find-House.html">
                 Find a House
             </a>
 
         </section>
 
+
     </main>
 
 
+    <!-- BOTTOM NAVIGATION -->
+
     <nav class="bottom-nav">
 
-        <a href="Home.html">🏠 Home</a>
+        <a href="Home.html">
+            🏠
+            <span>Home</span>
+        </a>
 
-        <a href="Find-House.html">🔍 Houses</a>
+        <a href="Find-House.html">
+            🔎
+            <span>Houses</span>
+        </a>
 
-        <a href="Saved.html">❤️ Saved</a>
+        <a href="Saved.html" class="active">
+            ♥
+            <span>Saved</span>
+        </a>
 
-        <a href="Profile.html">👤 Profile</a>
+        <a href="Profile.html">
+            👤
+            <span>Profile</span>
+        </a>
 
     </nav>
 
 
     <footer>
-
-        <p>
-            Medloge-Enugu — Helping students find accommodation around UNTH.
-        </p>
-
+        <p>© 2026 Medloge-Enugu. All rights reserved.</p>
     </footer>
 
 </body>
-
 </html>
+```

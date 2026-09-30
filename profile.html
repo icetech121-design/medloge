@@ -1,158 +1,267 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Profile - Medloge-Enugu</title>
+    <title>Profile | Medloge-Enugu</title>
 
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
+    <header class="page-header">
 
-        <a href="Home.html">← Back</a>
+        <a href="Home.html">← Back to Home</a>
 
-        <h1>My Profile</h1>
+        <h2>My Profile</h2>
+
+        <p>Manage your Medloge-Enugu account.</p>
 
     </header>
 
 
-    <main>
+    <main class="profile-main">
 
-        <!-- Profile Information -->
-        <section class="profile-information">
+        <!-- PROFILE CARD -->
 
-            <div class="profile-picture">
+        <section class="profile-card">
 
-                <img
-                    src="images/profile.jpg"
-                    alt="Profile picture"
-                >
+            <div class="profile-avatar">
+                K
+            </div>
+
+            <div class="profile-info">
+
+                <span>MEDLOGE USER</span>
+
+                <h1>Kelly</h1>
+
+                <p>Student / Professional</p>
 
             </div>
 
-            <h2>Student Name</h2>
-
-            <p>Medical Student</p>
-
-            <p>📱 080********</p>
-
-        </section>
-
-
-        <!-- Account Information -->
-        <section class="account-information">
-
-            <h2>Account</h2>
-
-            <p>
-                <strong>Full Name:</strong>
-                Student Name
-            </p>
-
-            <p>
-                <strong>Phone:</strong>
-                080********
-            </p>
-
-            <p>
-                <strong>Account Status:</strong>
-                ✓ Phone Verified
-            </p>
+            <button
+                type="button"
+                class="edit-profile-button"
+            >
+                Edit
+            </button>
 
         </section>
 
 
-        <!-- My Activity -->
-        <section class="my-activity">
+        <!-- ACCOUNT INFORMATION -->
 
-            <h2>My Activity</h2>
+        <section class="profile-section">
 
-            <a href="Saved.html">
-                ❤️ Saved Houses
-            </a>
+            <div class="profile-section-heading">
 
-            <a href="Book-Inspection.html">
-                📅 My Inspections
-            </a>
+                <div>
+                    <span>ACCOUNT</span>
+                    <h2>Personal Information</h2>
+                </div>
+
+            </div>
+
+
+            <div class="profile-info-list">
+
+                <div class="profile-info-item">
+
+                    <span>👤</span>
+
+                    <div>
+                        <small>Full Name</small>
+                        <strong>Kelly</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="profile-info-item">
+
+                    <span>📱</span>
+
+                    <div>
+                        <small>Phone Number</small>
+                        <strong>Not added yet</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="profile-info-item">
+
+                    <span>📍</span>
+
+                    <div>
+                        <small>Preferred Area</small>
+                        <strong>Near UNTH, Enugu</strong>
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
 
 
-        <!-- Settings -->
-        <section class="settings">
+        <!-- ACTIVITY -->
 
-            <h2>Settings</h2>
+        <section class="profile-section">
 
-            <a href="#">
-                ✏️ Edit Profile
-            </a>
+            <div class="profile-section-heading">
 
-            <a href="#">
-                🔔 Notifications
-            </a>
+                <div>
+                    <span>MY ACTIVITY</span>
+                    <h2>Your Medloge Activity</h2>
+                </div>
 
-            <a href="#">
-                🔒 Change Password
-            </a>
+            </div>
+
+
+            <div class="profile-actions">
+
+                <a href="Saved.html" class="profile-action">
+
+                    <div class="profile-action-icon">
+                        ♥
+                    </div>
+
+                    <div>
+                        <strong>Saved Houses</strong>
+                        <small>View houses you saved</small>
+                    </div>
+
+                    <span>→</span>
+
+                </a>
+
+
+                <a href="Book-Inspection.html" class="profile-action">
+
+                    <div class="profile-action-icon">
+                        📅
+                    </div>
+
+                    <div>
+                        <strong>My Inspections</strong>
+                        <small>View your inspection requests</small>
+                    </div>
+
+                    <span>→</span>
+
+                </a>
+
+            </div>
 
         </section>
 
 
-        <!-- Help -->
-        <section class="profile-help">
+        <!-- SUPPORT -->
 
-            <h2>Help & Support</h2>
+        <section class="profile-section">
 
-            <a href="About.html">
-                ℹ️ About Medloge
-            </a>
+            <div class="profile-section-heading">
 
-            <a href="#">
-                💬 Contact Support
-            </a>
+                <div>
+                    <span>SUPPORT</span>
+                    <h2>Need Help?</h2>
+                </div>
+
+            </div>
+
+
+            <div class="profile-actions">
+
+                <a href="#" class="profile-action">
+
+                    <div class="profile-action-icon">
+                        ?
+                    </div>
+
+                    <div>
+                        <strong>Help & Support</strong>
+                        <small>Get help using Medloge</small>
+                    </div>
+
+                    <span>→</span>
+
+                </a>
+
+
+                <a href="About.html" class="profile-action">
+
+                    <div class="profile-action-icon">
+                        ℹ
+                    </div>
+
+                    <div>
+                        <strong>About Medloge</strong>
+                        <small>Learn more about the platform</small>
+                    </div>
+
+                    <span>→</span>
+
+                </a>
+
+            </div>
 
         </section>
 
 
-        <!-- Logout -->
-        <section class="logout">
+        <!-- LOGOUT -->
 
-            <button type="button">
+        <section class="profile-logout">
+
+            <button
+                type="button"
+                class="logout-button"
+            >
                 Log Out
             </button>
 
         </section>
 
+
     </main>
 
 
+    <!-- BOTTOM NAVIGATION -->
+
     <nav class="bottom-nav">
 
-        <a href="Home.html">🏠 Home</a>
+        <a href="Home.html">
+            🏠
+            <span>Home</span>
+        </a>
 
-        <a href="Find-House.html">🔍 Houses</a>
+        <a href="Find-House.html">
+            🔎
+            <span>Houses</span>
+        </a>
 
-        <a href="Saved.html">❤️ Saved</a>
+        <a href="Saved.html">
+            ♥
+            <span>Saved</span>
+        </a>
 
-        <a href="Profile.html">👤 Profile</a>
+        <a href="Profile.html" class="active">
+            👤
+            <span>Profile</span>
+        </a>
 
     </nav>
 
 
     <footer>
-
-        <p>
-            Medloge-Enugu — Helping students find accommodation around UNTH.
-        </p>
-
+        <p>© 2026 Medloge-Enugu. All rights reserved.</p>
     </footer>
 
 </body>
-
 </html>
+```

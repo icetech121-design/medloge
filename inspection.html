@@ -1,182 +1,164 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Book Inspection - Medloge-Enugu</title>
-
-    <link rel="stylesheet" href=".css">
+    <title>Book Inspection | Medloge-Enugu</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-
-        <a href="House-Details.html">← Back</a>
-
-        <h1>Book Inspection</h1>
-
+    <header class="inspection-header">
+        <a href="House-Details.html">⬅</a>
+        <h2>Medloge-Enugu</h2>
     </header>
 
+    <main class="inspection-main">
 
-    <main>
-
-        <!-- House being inspected -->
-        <section class="inspection-house">
-
-            <h2>Comfortable Student Apartment</h2>
-
-            <p>📍 Area around UNTH</p>
-
-            <p>🏠 Self Contained</p>
-
+        <section class="inspection-intro">
+            <p>TAKE THE NEXT STEP</p>
+            <h1>Book a House Inspection</h1>
+            <p>Choose a convenient date and time to view the property before making your decision.</p>
         </section>
 
+        <section class="selected-property">
+            <img src="images/house-main.jpg" alt="Property you want to inspect">
 
-        <!-- Student Information -->
-        <section class="student-information">
-
-            <h2>Your Information</h2>
-
-            <label for="student-name">
-                Full Name
-            </label>
-
-            <input
-                type="text"
-                id="student-name"
-                placeholder="Enter your full name"
-            >
-
-
-            <label for="student-phone">
-                Phone Number
-            </label>
-
-            <input
-                type="tel"
-                id="student-phone"
-                placeholder="Enter your phone number"
-            >
-
+            <div>
+                <span>SELECTED PROPERTY</span>
+                <h2>Modern Student Apartment</h2>
+                <p>Near UNTH, Enugu</p>
+                <small>Demo property — details to be confirmed.</small>
+            </div>
         </section>
 
+        <section class="inspection-form-section">
 
-        <!-- Inspection Date -->
-        <section class="inspection-date">
+            <div class="form-heading">
+                <span>01</span>
+                <div>
+                    <h2>Your Information</h2>
+                    <p>Tell us how to reach you.</p>
+                </div>
+            </div>
 
-            <h2>Choose Inspection Date</h2>
+            <form id="inspection-form">
 
-            <label for="inspection-date">
-                Date
-            </label>
-
-            <input
-                type="date"
-                id="inspection-date"
-            >
-
-        </section>
-
-
-        <!-- Inspection Time -->
-        <section class="inspection-time">
-
-            <h2>Choose Inspection Time</h2>
-
-            <label for="inspection-time">
-                Preferred Time
-            </label>
-
-            <input
-                type="time"
-                id="inspection-time"
-            >
-
-        </section>
-
-
-        <!-- Inspection Method -->
-        <section class="inspection-method">
-
-            <h2>Inspection Method</h2>
-
-            <label>
-
+                <label for="full-name">Full Name</label>
                 <input
-                    type="radio"
-                    name="inspection-method"
-                    value="physical"
+                    type="text"
+                    id="full-name"
+                    name="fullName"
+                    placeholder="Enter your full name"
+                    required
                 >
 
-                Physical Inspection
-
-            </label>
-
-
-            <label>
-
+                <label for="phone">Phone Number</label>
                 <input
-                    type="radio"
-                    name="inspection-method"
-                    value="video"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="e.g. 08012345678"
+                    required
                 >
 
-                Video Tour
+                <div class="form-heading">
+                    <span>02</span>
+                    <div>
+                        <h2>Inspection Schedule</h2>
+                        <p>When would you like to Come see the House?</p>
+                    </div>
+                </div>
 
-            </label>
+                <label for="inspection-date">Preferred Date</label>
+                <input
+                    type="date"
+                    id="inspection-date"
+                    name="inspectionDate"
+                    required
+                >
+
+                <label for="inspection-time">Preferred Time</label>
+                <select id="inspection-time" name="inspectionTime" required>
+                    <option value="">Choose a time</option>
+                    <option value="9am - 11am">9:00 AM - 11:00 AM</option>
+                    <option value="11am - 1pm">11:00 AM - 1:00 PM</option>
+                    <option value="1pm - 3pm">1:00 PM - 3:00 PM</option>
+                    <option value="3pm - 5pm">3:00 PM - 5:00 PM</option>
+                </select>
+
+                <div class="form-heading">
+                    <span>03</span>
+                    <div>
+                        <h2>Inspection Method</h2>
+                        <p>How would you prefer to view the property?</p>
+                    </div>
+                </div>
+
+                <div class="inspection-methods">
+
+                    <label class="method-card">
+                        <input
+                            type="radio"
+                            name="inspectionMethod"
+                            value="Physical Inspection"
+                            required
+                        >
+                        <span>🏠</span>
+                        <strong>Physical Visit</strong>
+                        <small>Visit the property in person.</small>
+                    </label>
+
+                    <label class="method-card">
+                        <input
+                            type="radio"
+                            name="inspectionMethod"
+                            value="Video Inspection"
+                        >
+                        <span>📱</span>
+                        <strong>Video Inspection</strong>
+                        <small>View the property remotely.</small>
+                    </label>
+
+                </div>
+
+                <label for="message">Additional Message (Optional)</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Any questions or additional information?"
+                ></textarea>
+
+                <div class="inspection-notice">
+                    <strong>Important information</strong>
+                    <p>This is an inspection request only. It does not reserve the property or confirm a rental agreement. Wait for the property contact to confirm your inspection before making travel arrangements or payments.</p>
+                </div>
+
+                <button type="submit" class="inspection-submit">
+                    Submit Inspection Request →
+                </button>
+
+            </form>
 
         </section>
 
+        <nav class="bottom-nav">
+            <a href="Home.html">🏠 Home</a>
+            <a href="Find-House.html">🔍 Houses</a>
+            <a href="Saved.html">❤️ Saved</a>
+            <a href="Profile.html">👤 Profile</a>
+        </nav>
 
-        <!-- Additional Message -->
-        <section class="inspection-message">
-
-            <h2>Additional Message</h2>
-
-            <textarea
-                id="message"
-                placeholder="Anything you want the landlord or agent to know?"
-            ></textarea>
-
-        </section>
-
-
-        <!-- Confirmation -->
-        <section class="inspection-confirmation">
-
-            <h2>Before You Submit</h2>
-
-            <p>
-                Your inspection request will be sent to the
-                property contact for confirmation.
-            </p>
-
-            <p>
-                ⚠️ Do not send money to anyone until you understand
-                the payment and verification process.
-            </p>
-
-            <button type="submit">
-                Request Inspection
-            </button>
-
-        </section>
 
     </main>
 
-
     <footer>
-
-        <p>
-            Medloge-Enugu — Helping students find accommodation around UNTH.
-        </p>
-
+        <p>© 2026 Medloge-Enugu. All rights reserved.</p>
     </footer>
 
 </body>
-
 </html>
+```

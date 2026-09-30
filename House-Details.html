@@ -2,153 +2,303 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>House Details - Medloge-Enugu</title>
 
-    <link rel="stylesheet" href=".css">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <header>
+    <!-- HEADER -->
+    <header class="details-header">
 
-        <a href="Find-House.html">← Back</a>
+        <a href="Find-House.html">⬅</a>
 
-        <h1>House Details</h1>
+        <button class="menu-btn" type="button">☰</button>
 
     </header>
 
 
-    <main>
 
-        <!-- Main House Image -->
-        <section class="house-main-image">
+    <main class="details-main">
 
-            <img
-                src="images/house-main.jpg"
-                alt="Main view of the apartment"
-            >
+        <!-- MAIN APARTMENT PHOTO -->
+        <section class="property-hero">
 
-        </section>
-
-
-        <!-- House Information -->
-        <section class="house-information">
-
-            <h2>Comfortable Student Apartment</h2>
-
-            <p>📍 Location: Area around UNTH</p>
-
-            <p>💰 Rent: Contact for Price</p>
-
-            <p>🏠 House Type: Self Contained</p>
-
-            <p>🚶 Distance from UNTH: Coming Soon</p>
-
-        </section>
-
-
-        <!-- House Gallery -->
-        <section class="house-gallery">
-
-            <h2>Photos</h2>
-
-            <div class="gallery">
+            <div class="property-main-image">
 
                 <img
-                    src="images/house-room.jpg"
-                    alt="Room inside the apartment"
+                    src="images/house-main.jpg"
+                    alt="Main view of the apartment"
                 >
 
-                <img
-                    src="images/house-kitchen.jpg"
-                    alt="Kitchen inside the apartment"
-                >
-
-                <img
-                    src="images/house-bathroom.jpg"
-                    alt="Bathroom inside the apartment"
-                >
+                <span class="property-badge">Apartment Details</span>
 
             </div>
 
         </section>
 
 
-        <!-- Video -->
-        <section class="house-video">
+        <!-- PROPERTY INFORMATION -->
+        <section class="property-overview">
 
-            <h2>Apartment Video Tour</h2>
+            <div class="property-heading">
 
-            <video controls>
+                <div>
 
-                <source
-                    src="videos/house-tour.mp4"
-                    type="video/mp4"
+                    <p class="property-category">SELF CONTAINED</p>
+
+                    <h1>Comfortable Student Apartment</h1>
+
+                    <p class="property-location">
+                        📍 Around UNTH, Enugu
+                    </p>
+
+                </div>
+
+                <button
+                    class="details-save-button"
+                    type="button"
+                >
+                    ♡ Save
+                </button>
+
+            </div>
+
+            <div class="property-price">
+
+                <p>Rental Price</p>
+
+                <h2>Contact for Price</h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROPERTY HIGHLIGHTS -->
+        <section class="property-highlights">
+
+            <h2>Apartment Overview</h2>
+
+            <div class="highlight-grid">
+
+                <div class="highlight-item">
+                    <span>🏠</span>
+                    <p>Self Contained</p>
+                </div>
+
+                <div class="highlight-item">
+                    <span>📍</span>
+                    <p>UNTH Area</p>
+                </div>
+
+                <div class="highlight-item">
+                    <span>💧</span>
+                    <p>Water</p>
+                </div>
+
+                <div class="highlight-item">
+                    <span>⚡</span>
+                    <p>Electricity</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- APARTMENT PHOTO GALLERY -->
+        <section class="apartment-gallery">
+
+            <div class="details-section-heading">
+
+                <div>
+                    <h2>Explore the Apartment</h2>
+                    <p>Take a closer look at the property.</p>
+                </div>
+
+                <span class="gallery-label">PHOTOS</span>
+
+            </div>
+
+
+            <div class="gallery-main">
+
+                <img
+                    src="images/house-room.jpg"
+                    alt="Main bedroom view"
                 >
 
-                Your browser does not support video playback.
+            </div>
 
-            </video>
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/house-kitchen.jpg"
+                        alt="Apartment kitchen"
+                    >
+
+                    <span>Kitchen</span>
+
+                </div>
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/house-bathroom.jpg"
+                        alt="Apartment bathroom"
+                    >
+
+                    <span>Bathroom</span>
+
+                </div>
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/house-room.jpg"
+                        alt="Apartment room"
+                    >
+
+                    <span>Bedroom</span>
+
+                </div>
+
+            </div>
 
         </section>
 
 
-        <!-- Important Facilities -->
-        <section class="facilities">
+        <!-- VIDEO TOUR -->
+        <section class="apartment-video">
 
-            <h2>What This House Offers</h2>
+            <div class="details-section-heading">
 
-            <p>💧 Water</p>
+                <div>
+                    <h2>Video Tour</h2>
+                    <p>See the apartment before requesting an inspection.</p>
+                </div>
 
-            <p>⚡ Electricity</p>
+                <span class="video-label">VIDEO</span>
 
-            <p>🔐 Security</p>
-
-            <p>🛏️ Furnished</p>
-
-            <p>🚗 Parking</p>
-
-        </section>
+            </div>
 
 
-        <!-- House Description -->
-        <section class="house-description">
+            <div class="video-container">
 
-            <h2>About This House</h2>
+                <video controls poster="images/house-main.jpg">
 
-            <p>
-                Add a detailed description of the apartment here.
-                Explain the environment, available facilities,
-                nearby places and other important information.
+                    <source
+                        src="videos/house-tour.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support video playback.
+
+                </video>
+
+            </div>
+
+            <p class="video-caption">
+                Take a virtual look around the apartment.
             </p>
 
         </section>
 
 
-        <!-- Action Buttons -->
-        <section class="house-actions">
+        <!-- FACILITIES -->
+        <section class="property-facilities">
 
-            <button type="button">
-                ❤️ Save House
-            </button>
+            <h2>Facilities and Features</h2>
 
-            <button type="button">
+            <div class="facilities-grid">
+
+                <p>💧 Water Supply</p>
+
+                <p>⚡ Electricity</p>
+
+                <p>🔐 Security</p>
+
+                <p>🚗 Parking Space</p>
+
+                <p>🛏️ Furnished Room</p>
+
+                <p>🚿 Private Bathroom</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOUSE DESCRIPTION -->
+        <section class="property-description">
+
+            <h2>About This Apartment</h2>
+
+            <p>
+                This section will contain a detailed description
+                of the apartment, its environment, available
+                facilities and other important information.
+            </p>
+
+            <p>
+                Students can review these details before deciding
+                whether to request an inspection.
+            </p>
+
+        </section>
+
+
+        <!-- LOCATION -->
+        <section class="property-location-section">
+
+            <h2>Location Information</h2>
+
+            <p>📍 Location: Around UNTH, Enugu</p>
+
+            <p>🚶 Distance from UNTH: Coming Soon</p>
+
+            <p>
+                Exact property location will be provided
+                through the listing details.
+            </p>
+
+        </section>
+
+
+        <!-- PROPERTY ACTIONS -->
+        <section class="property-actions">
+
+            <button
+                class="contact-button"
+                type="button"
+            >
                 📞 Contact
             </button>
 
-            <button type="button">
-                📅 Book Inspection
-            </button>
+            <a
+                href="inspection.html"
+                class="inspection-button"
+            >
+                📅 Request Inspection
+            </a>
 
         </section>
+
 
     </main>
 
 
+    <!-- BOTTOM NAVIGATION -->
     <nav class="bottom-nav">
 
         <a href="Home.html">🏠 Home</a>

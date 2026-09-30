@@ -3,185 +3,220 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Find a House - Medloge-Enugu</title>
-
-    <link rel="stylesheet" href=".css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
+    <header class="page-header">
 
-        <a href="Home.html">← Back</a>
+        <a href="Home.html">⬅</a>
 
-        <h1>Find a House</h1>
+        <div>
+            <h2>Find a House</h2>
+            <p>Explore accommodation around UNTH</p>
+        </div>
 
         <button class="menu-btn" type="button">☰</button>
 
     </header>
 
-
     <main>
 
-        <section class="search-section">
+        <!-- SEARCH -->
+        <section class="house-search">
 
-            <h2>Find accommodation around UNTH</h2>
+            <h1>Find your next home.</h1>
 
-            <input
-                type="search"
-                id="house-search"
-                placeholder="Search area or house..."
-            >
+            <p>Discover accommodation that suits your needs.</p>
 
-            <button type="button">
-                Search
-            </button>
+            <div class="search-box">
+
+                <input
+                    type="search"
+                    id="house-search"
+                    placeholder="Search location or house type..."
+                >
+
+                <button type="button">Search</button>
+
+            </div>
 
         </section>
 
 
-        <section class="filters">
+        <!-- FILTERS -->
+        <section class="house-filters">
 
-            <h2>Filter Houses</h2>
+            <div class="section-heading">
+                <h2>Filter Houses</h2>
+                <span>Refine your search</span>
+            </div>
 
-            <label for="house-type">House Type</label>
+            <div class="filter-grid">
 
-            <select id="house-type">
+                <div>
+                    <label for="house-type">House Type</label>
 
-                <option value="">All House Types</option>
+                    <select id="house-type">
+                        <option value="">All House Types</option>
+                        <option value="self-contained">Self Contained</option>
+                        <option value="single-room">Single Room</option>
+                        <option value="shared-apartment">Shared Apartment</option>
+                        <option value="full-apartment">Full Apartment</option>
+                    </select>
+                </div>
 
-                <option value="self-contained">
-                    Self Contained
-                </option>
+                <div>
+                    <label for="price-range">Price Range</label>
 
-                <option value="single-room">
-                    Single Room
-                </option>
+                    <select id="price-range">
+                        <option value="">Any Price</option>
+                        <option value="low">Lower Price</option>
+                        <option value="medium">Medium Price</option>
+                        <option value="high">Higher Price</option>
+                    </select>
+                </div>
 
-                <option value="shared-apartment">
-                    Shared Apartment
-                </option>
+                <div>
+                    <label for="distance">Distance from UNTH</label>
 
-                <option value="full-apartment">
-                    Full Apartment
-                </option>
+                    <select id="distance">
+                        <option value="">Any Distance</option>
+                        <option value="near">Very Close</option>
+                        <option value="medium">Nearby</option>
+                        <option value="far">Further Away</option>
+                    </select>
+                </div>
 
-            </select>
+            </div>
 
-
-            <label for="price-range">Price Range</label>
-
-            <select id="price-range">
-
-                <option value="">Any Price</option>
-
-                <option value="low">
-                    Lower Price
-                </option>
-
-                <option value="medium">
-                    Medium Price
-                </option>
-
-                <option value="high">
-                    Higher Price
-                </option>
-
-            </select>
-
-
-            <label for="distance">Distance from UNTH</label>
-
-            <select id="distance">
-
-                <option value="">Any Distance</option>
-
-                <option value="near">
-                    Very Close
-                </option>
-
-                <option value="medium">
-                    Nearby
-                </option>
-
-                <option value="far">
-                    Further Away
-                </option>
-
-            </select>
-
-            <button type="button">
+            <button class="filter-button" type="button">
                 Apply Filters
             </button>
 
         </section>
 
 
-        <section class="house-list">
+        <!-- HOUSE LISTINGS -->
+        <section class="house-listings">
 
-            <h2>Available Houses</h2>
+            <div class="section-heading">
 
-            <article class="house-card">
-
-                <div class="house-image">
-                    House Photo
+                <div>
+                    <h2>Available Houses</h2>
+                    <p>Explore accommodation options</p>
                 </div>
 
-                <h3>Comfortable Student Apartment</h3>
+                <span class="listing-count">Featured</span>
 
-                <p>📍 Area around UNTH</p>
+            </div>
 
-                <p>🏠 Self Contained</p>
 
-                <p>🚶 Distance from UNTH: Coming Soon</p>
+            <!-- HOUSE CARD ONE -->
+            <article class="house-card">
 
-                <p>💰 Rent: Contact for Price</p>
+                <div class="listing-image">
 
-                <p>💧 Water: Available 24/7</p>
+                    <img
+                        src="images/house-main.jpg"
+                        alt="Student apartment"
+                    >
 
-                <p>⚡ Electricity: Available 24/7</p>
+                    <span class="listing-status">Featured</span>
 
-                <a href="House-Details.html">
-                    View House
-                </a>
+                    <button class="save-button" type="button">
+                        ♡
+                    </button>
 
-                <button type="button">
-                    ❤️ Save
-                </button>
+                </div>
+
+                <div class="listing-content">
+
+                    <p class="listing-type">SELF CONTAINED</p>
+
+                    <h3>Comfortable Student Apartment</h3>
+
+                    <p class="listing-location">
+                        📍 Around UNTH
+                    </p>
+
+                    <div class="listing-details">
+
+                        <span>💧 Water</span>
+                        <span>⚡ Electricity</span>
+                        <span>🔐 Security</span>
+
+                    </div>
+
+                    <div class="listing-bottom">
+
+                        <div>
+                            <p>Rent</p>
+                            <h3>Contact for Price</h3>
+                        </div>
+
+                        <a href="House-Details.html" class="button">
+                            View House
+                        </a>
+
+                    </div>
+
+                </div>
 
             </article>
 
 
+            <!-- HOUSE CARD TWO -->
             <article class="house-card">
 
-                <div class="house-image">
-                    House Photo
+                <div class="listing-image">
+
+                    <img
+                        src="images/house-room.jpg"
+                        alt="Shared student apartment"
+                    >
+
+                    <button class="save-button" type="button">
+                        ♡
+                    </button>
+
                 </div>
 
-                <h3>Student-Friendly Apartment</h3>
+                <div class="listing-content">
 
-                <p>📍 Area around UNTH</p>
+                    <p class="listing-type">SHARED APARTMENT</p>
 
-                <p>🏠 Shared Apartment</p>
+                    <h3>Student-Friendly Apartment</h3>
 
-                <p>🚶 Distance from UNTH: Coming Soon</p>
+                    <p class="listing-location">
+                        📍 Around UNTH
+                    </p>
 
-                <p>💰 Rent: Contact for Price</p>
+                    <div class="listing-details">
 
-                <p>💧 Water: Available 24/7</p>
+                        <span>💧 Water</span>
+                        <span>⚡ Electricity</span>
 
-                <p>⚡ Electricity: Available24/7</p>
+                    </div>
 
-                <a href="House-Details.html">
-                    View House
-                </a>
+                    <div class="listing-bottom">
 
-                <button type="button">
-                    ❤️ Save
-                </button>
+                        <div>
+                            <p>Rent</p>
+                            <h3>Contact for Price</h3>
+                        </div>
+
+                        <a href="House-Details.html" class="button">
+                            View House
+                        </a>
+
+                    </div>
+
+                </div>
 
             </article>
 
@@ -193,11 +228,8 @@
     <nav class="bottom-nav">
 
         <a href="Home.html">🏠 Home</a>
-
         <a href="Find-House.html">🔍 Houses</a>
-
         <a href="Saved.html">❤️ Saved</a>
-
         <a href="Profile.html">👤 Profile</a>
 
     </nav>
@@ -206,11 +238,10 @@
     <footer>
 
         <p>
-            Medloge-Enugu — Find accommodation around UNTH
+            Medloge-Enugu — Helping students find accommodation around UNTH.
         </p>
 
     </footer>
 
 </body>
-
 </html>
