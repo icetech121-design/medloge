@@ -21,191 +21,40 @@
     </header>
 
 
-    <main class="saved-main">
+        <main class="saved-main">
 
         <section class="saved-intro">
-
             <div>
                 <span>SAVED PROPERTIES</span>
                 <h1>Your Shortlist</h1>
-                <p>
-                    Houses you save will appear here so you can
-                    compare them later.
-                </p>
+                <p>Houses you save will appear here so you can compare them later.</p>
             </div>
-
             <div class="saved-count">
-                <strong>2</strong>
+                <!-- Dynamic Count -->
+                <strong id="saved-count-num">0</strong>
                 <span>Saved</span>
             </div>
-
         </section>
 
-
-        <section class="saved-list">
-
+        <!-- Dynamic List Container -->
+        <section class="saved-list" id="saved-list-container" style="display: none;">
             <div class="section-heading">
                 <h2>Saved Houses</h2>
-                <span>2 properties</span>
+                <!-- Dynamic Subtitle Count -->
+                <span id="total-properties-count">0 properties</span>
             </div>
-
-
-            <!-- SAVED HOUSE 1 -->
-
-            <article class="saved-house-card">
-
-                <div class="saved-house-image">
-
-                    <img
-                        src="images/house-main.jpg"
-                        alt="Modern student apartment"
-                    >
-
-                    <button
-                        type="button"
-                        class="saved-heart"
-                        aria-label="Remove house from saved houses"
-                    >
-                        ♥
-                    </button>
-
-                </div>
-
-
-                <div class="saved-house-content">
-
-                    <span class="listing-type">
-                        STUDENT APARTMENT
-                    </span>
-
-                    <h3>Modern Student Apartment</h3>
-
-                    <p class="saved-location">
-                        📍 Near UNTH, Enugu
-                    </p>
-
-
-                    <div class="saved-details">
-
-                        <span>🛏 2 Rooms</span>
-                        <span>💧 Water</span>
-                        <span>⚡ Electricity</span>
-
-                    </div>
-
-
-                    <div class="saved-house-bottom">
-
-                        <div>
-                            <p>Rental Price</p>
-                            <strong>Contact for Price</strong>
-                        </div>
-
-                        <a
-                            href="House-Details.html"
-                            class="button"
-                        >
-                            View House
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- SAVED HOUSE 2 -->
-
-            <article class="saved-house-card">
-
-                <div class="saved-house-image">
-
-                    <img
-                        src="images/house-room.jpg"
-                        alt="Student room apartment"
-                    >
-
-                    <button
-                        type="button"
-                        class="saved-heart"
-                        aria-label="Remove house from saved houses"
-                    >
-                        ♥
-                    </button>
-
-                </div>
-
-
-                <div class="saved-house-content">
-
-                    <span class="listing-type">
-                        SELF CONTAIN
-                    </span>
-
-                    <h3>Student Self-Contain</h3>
-
-                    <p class="saved-location">
-                        📍 Enugu, near UNTH
-                    </p>
-
-
-                    <div class="saved-details">
-
-                        <span>🛏 1 Room</span>
-                        <span>💧 Water</span>
-                        <span>🔌 Power</span>
-
-                    </div>
-
-
-                    <div class="saved-house-bottom">
-
-                        <div>
-                            <p>Rental Price</p>
-                            <strong>Contact for Price</strong>
-                        </div>
-
-                        <a
-                            href="House-Details.html"
-                            class="button"
-                        >
-                            View House
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
+            
+            <!-- JavaScript will inject <article class="saved-house-card"> items right here -->
+            <div id="dynamic-cards-target"></div>
         </section>
 
-
-        <!-- EMPTY STATE -->
-
-        <section class="saved-empty">
-
-            <div class="saved-empty-icon">
-                ♡
-            </div>
-
+        <!-- EMPTY STATE (Visible by default) -->
+        <section class="saved-empty" id="saved-empty-state">
+            <div class="saved-empty-icon">♡</div>
             <h2>No saved houses yet</h2>
-
-            <p>
-                When you find a house you like, tap the heart
-                icon to save it here.
-            </p>
-
-            <a
-                href="Find-House.html"
-                class="button"
-            >
-                Find a House
-            </a>
-
+            <p>When you find a house you like, tap the heart icon to save it here.</p>
+            <a href="Find-House.html" class="button">Find a House</a>
         </section>
-
 
     </main>
 
@@ -240,6 +89,8 @@
     <footer>
         <p>© 2026 Medloge-Enugu. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>

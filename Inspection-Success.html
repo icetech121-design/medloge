@@ -13,31 +13,59 @@
 <body>
 
     <header class="success-header">
+        <a href="inspection.html">⬅</a>
         <h2>Medloge-Enugu</h2>
     </header>
 
     <main class="success-main">
 
-        <section class="success-card">
+        <section class="success-intro">
+            <span>CONGRATULATIONS!</span>
+            <!-- The magic happens inside this span tag with the id -->
+            <h1>Dear, <span id="student-name">Student</span>!</h1> 
+            <p>Your house inspection request has been recorded successfully.</p>
+        </section>
 
-            <div class="success-icon">
-                ✓
+        <section class="booking-summary-card">
+    
+            <h2>Please double-check your schedule details below:</h2>
+            <h3>Inspection Summary</h3>
+
+            <div class="summary-details">
+        
+                <p>
+                    <strong>📅 Date:</strong> 
+                    <span id="display-date">Loading date...</span>
+                </p>
+        
+                <p>
+                    <strong>⏰ Time:</strong> 
+                    <span id="display-time">Loading time...</span>
+                </p>
+        
+                 <p>
+                     <strong>🚗 Method:</strong> 
+                     <span id="display-method">Loading method...</span>
+                 </p>
+
+                 <p>
+                      <strong>💬 Message:</strong> 
+                      <span id="display-message">None</span>
+                 </p>
+
             </div>
 
-            <span class="success-label">INSPECTION REQUEST</span>
+        </section>
 
-            <h1>Your Next Step Starts Here!</h1>
 
-            <p class="success-description">
-                Once your inspection request has been submitted,
-                its details and confirmation status will appear here.
-            </p>
+
+        <section class="success-card">
 
             <div class="request-status">
                 <span class="status-dot"></span>
                 <div>
                     <strong>Awaiting confirmation</strong>
-                    <p>The property contact needs to confirm your preferred inspection schedule.</p>
+                    <p>The property contact will confirm your preferred inspection schedule, and send you a comfirmation massage via WhatsApp</p>
                 </div>
             </div>
 
@@ -93,6 +121,8 @@
     <footer>
         <p>© 2026 Medloge-Enugu. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>

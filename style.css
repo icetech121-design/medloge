@@ -100,20 +100,49 @@ header h2 {
 
 
 /* ---------- MENU BUTTON ---------- */
+.page-header{
+    position: relative;
 
-.menu-btn {
-    width: 42px;
-    height: 42px;
-
-    border: none;
-    border-radius: 12px;
-
-    background: #eef7f4;
-    color: #176b5b;
-
-    font-size: 20px;
-    cursor: pointer;
 }
+
+.header-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 10px 0;
+    width: 220px;
+    z-index: 1000;
+}
+
+.header-dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid #f0f0f0;
+    transition: backgrownd-color 0.2s ease, color 0.2s ease;
+}
+
+.header-dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.header-dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+.header-dropdown-menu.show-menu {
+    display: block;
+}
+
+
+
 
 
 /* ---------- MAIN ---------- */
@@ -424,6 +453,34 @@ footer p {
     }
 
 }
+    /* FLOATING NOTIFICATION BANNER */
+.toast-banner {
+    position: fixed;
+    top: -80px; /* Hidden above the screen bounds */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333333;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* Higher than everything else on the layout */
+    transition: top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snappy bounce animation */
+}
+
+/* CLASS TOGGLED VIA JAVASCRIPT */
+.toast-banner.show-toast {
+    top: 20px; /* Slides down into view */
+}
+
+/* SAVED HEART HIGHLIGHT EFFECT */
+.save-button.is-saved {
+    color: #ff2a5f !important; /* Vibrant custom brand pink/red */
+    transform: scale(1.15); /* Subtle pop size shift */
+    font-weight: bold;
+}
+
 
 /* HOME PAGE */
 .home-header {
@@ -698,6 +755,56 @@ footer p {
 .filter-button {
     width: 100%;
     margin-top: 10px;
+}
+
+/* SEARCH RESULTS AND EMPTY STATE */
+
+#house-result-count {
+    color: #667085;
+    font-size: 13px;
+    margin: 0 0 18px;
+}
+
+.no-houses-found {
+    background: white;
+    border: 1px dashed #d0d5dd;
+    border-radius: 20px;
+    padding: 35px 22px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.no-houses-found[hidden] {
+    display: none;
+}
+
+.no-houses-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: #eef7f4;
+    color: #176b5b;
+    font-size: 32px;
+}
+
+.no-houses-found h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.no-houses-found p {
+    max-width: 380px;
+    margin: 0 auto 20px;
+    color: #667085;
+    font-size: 13px;
+}
+
+.no-houses-found .button {
+    display: inline-block;
 }
 
 
@@ -975,12 +1082,13 @@ footer p {
 }
 
 .property-price p {
-    font-size: 12px;
+    font-size: bold;
     margin: 0;
+    padding: 10px;
 }
 
-.property-price h2 {
-    color: #176b5b;
+.property-price a {
+    color: #fcfdfd;
     margin-top: 5px;
 }
 
@@ -1833,7 +1941,7 @@ footer p {
 
 }
 
-```css
+
 /* PROFILE PAGE */
 
 .profile-main {

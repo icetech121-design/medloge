@@ -10,6 +10,9 @@
 </head>
 
 <body>
+        <!-- FLOATING NOTIFICATION BANNER -->
+    <div id="toast-notification" class="toast-banner">Saved to your collection! ❤️</div>
+
 
     <header class="page-header">
 
@@ -41,7 +44,7 @@
                     placeholder="Search location or house type..."
                 >
 
-                <button type="button">Search</button>
+                <button type="button" id="search-button">Search</button>
 
             </div>
 
@@ -63,7 +66,7 @@
 
                     <select id="house-type">
                         <option value="">All House Types</option>
-                        <option value="self-contained">Self Contained</option>
+                        <option value="self-contained">SELF CONTAINED</option>
                         <option value="single-room">Single Room</option>
                         <option value="shared-apartment">Shared Apartment</option>
                         <option value="full-apartment">Full Apartment</option>
@@ -75,9 +78,11 @@
 
                     <select id="price-range">
                         <option value="">Any Price</option>
-                        <option value="low">Lower Price</option>
-                        <option value="medium">Medium Price</option>
-                        <option value="high">Higher Price</option>
+                        <option value="under-100k">Under ₦100,000</option>
+                        <option value="100k-200k">₦100,000 - ₦200,000</option>
+                        <option value="200k-300k">₦200,000 - ₦300,000</option>
+                        <option value="over-300k">₦300,000 and Above</option>
+                        
                     </select>
                 </div>
 
@@ -89,12 +94,15 @@
                         <option value="near">Very Close</option>
                         <option value="medium">Nearby</option>
                         <option value="far">Further Away</option>
+                        <option value="2">Within 2 km</option>
+                        <option value="5">Within 5 km</option>
+                        <option value="10">Within 10 km</option>
                     </select>
                 </div>
 
             </div>
 
-            <button class="filter-button" type="button">
+            <button type="button" id="apply-filters" class="filter-button">
                 Apply Filters
             </button>
 
@@ -115,9 +123,27 @@
 
             </div>
 
+                <p id="house-result-count" aria-live="polite">
+                    2 properties found
+                </p>
+
+            <div id="no-houses-found" class="no-houses-found" hidden>
+                <div class="no-houses-icon">⌕</div>
+                <h3>No houses found</h3>
+                <p>
+                    We couldn't find any properties matching your search.
+                    Try another keyword or adjust your filters.
+               </p>
+
+               <button type="button" id="reset-house-search" class="button">
+                    Clear Search & Filters
+               </button>
+
+            </div>
+
 
             <!-- HOUSE CARD ONE -->
-            <article class="house-card">
+            <article class="house-card" data-house-id="house-1" data-house-type="slef-contain" data-price="" data-distance-km="">
 
                 <div class="listing-image">
 
@@ -128,7 +154,11 @@
 
                     <span class="listing-status">Featured</span>
 
-                    <button class="save-button" type="button">
+                    <button
+                        type="button"
+                        class="save-button"
+                        data-house-id="house-1"
+                        aria-label="Save house">
                         ♡
                     </button>
 
@@ -171,24 +201,28 @@
 
 
             <!-- HOUSE CARD TWO -->
-            <article class="house-card">
+            <article class="house-card" data-house-id="house-2" data-house-type="Singel room" data-price="" data-distance-km="">
 
                 <div class="listing-image">
 
                     <img
                         src="images/house-room.jpg"
-                        alt="Shared student apartment"
+                        alt="Single-room"
                     >
-
-                    <button class="save-button" type="button">
+                    <button
+                        type="button"
+                        class="save-button"
+                        data-house-id="house-2"
+                        aria-label="Save house">
                         ♡
                     </button>
+                    
 
                 </div>
 
                 <div class="listing-content">
 
-                    <p class="listing-type">SHARED APARTMENT</p>
+                    <p class="listing-type">SINGLE ROOM</p>
 
                     <h3>Student-Friendly Apartment</h3>
 
@@ -242,6 +276,9 @@
         </p>
 
     </footer>
+    
+    <script src="script.js"></script>
+
 
 </body>
 </html>

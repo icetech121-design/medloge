@@ -53,6 +53,7 @@
                     name="fullName"
                     placeholder="Enter your full name"
                     required
+                    minlength="2"
                 >
 
                 <label for="phone">Phone Number</label>
@@ -79,16 +80,14 @@
                     name="inspectionDate"
                     required
                 >
-
                 <label for="inspection-time">Preferred Time</label>
                 <select id="inspection-time" name="inspectionTime" required>
                     <option value="">Choose a time</option>
-                    <option value="9am - 11am">9:00 AM - 11:00 AM</option>
-                    <option value="11am - 1pm">11:00 AM - 1:00 PM</option>
-                    <option value="1pm - 3pm">1:00 PM - 3:00 PM</option>
-                    <option value="3pm - 5pm">3:00 PM - 5:00 PM</option>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="evening">Evening</option>
                 </select>
-
+                
                 <div class="form-heading">
                     <span>03</span>
                     <div>
@@ -138,7 +137,7 @@
                 </div>
 
                 <button type="submit" class="inspection-submit">
-                    Submit Inspection Request →
+                    Request Inspection →
                 </button>
 
             </form>
@@ -159,6 +158,9 @@
         <p>© 2026 Medloge-Enugu. All rights reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
+
+
 </body>
 </html>
-```
+

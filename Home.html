@@ -11,13 +11,23 @@
 
 <body>
 
+
     <header class="home-header">
         <div>
             <h2>Medloge<span>-Enugu</span></h2>
             <p>Find a place to call home.</p>
         </div>
 
-        <button class="menu-btn" type="button">☰</button>
+        <button class="menu-btn" id="menu-toggle-btn" type="button">☰</button>
+
+        <nav class="header-dropdown-menu" id="header-dropdown">
+            <a href="Home.html">🏠 Home Dashboard</a>
+            <a href="Find-House.html">🔍 Search Accommodations</a>
+            <a href="Saved.html">❤️ Saved Properties</a>
+            <a href="Profile.html">👤 Student Profile</a>
+        </nav>
+
+        
     </header>
 
     <main>
@@ -25,7 +35,7 @@
         <section class="welcome">
             <p>WELCOME TO MEDLOGE 👋</p>
 
-            <h1>Find a place you'll love to live.</h1>
+            <h1 id="welcome-title">Find a place you'll love to live.</h1>
 
             <p>
                 Explore accommodation around UNTH
@@ -129,6 +139,8 @@
     <footer>
         <p>Medloge-Enugu — Helping students find accommodation around UNTH.</p>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
