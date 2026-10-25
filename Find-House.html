@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Find a House - Medloge-Enugu</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ice.css">
 </head>
 
 <body>
@@ -22,8 +22,17 @@
             <h2>Find a House</h2>
             <p>Explore accommodation around UNTH</p>
         </div>
+        
+        <button class="menu-btn" id="menu-toggle-btn" type="button">☰</button>
 
-        <button class="menu-btn" type="button">☰</button>
+        <nav class="header-dropdown-menu" id="header-dropdown">
+            <a href="Home.html">🏠 Home Dashboard</a>
+            <a href="Find-House.html">🔍 Search Accommodations</a>
+            <a href="Saved.html">❤️ Saved Properties</a>
+            <a href="Profile.html">👤 Student Profile</a>
+        </nav>
+
+
 
     </header>
 
@@ -148,8 +157,10 @@
                 <div class="listing-image">
 
                     <img
-                        src="images/house-main.jpg"
-                        alt="Student apartment"
+                        src="images/ice8.jpg"
+                        alt="Comfortable Student apartment around UNTH"
+                        class="property-image"
+                        loading="lazy"
                     >
 
                     <span class="listing-status">Featured</span>
@@ -206,9 +217,12 @@
                 <div class="listing-image">
 
                     <img
-                        src="images/house-room.jpg"
-                        alt="Single-room"
+                        src="images/ice4.JPG"
+                        alt="Comfortable Single-room around UNTH"
+                        class="property-image"
+                        loading="lazy"
                     >
+
                     <button
                         type="button"
                         class="save-button"
@@ -223,6 +237,7 @@
                 <div class="listing-content">
 
                     <p class="listing-type">SINGLE ROOM</p>
+
 
                     <h3>Student-Friendly Apartment</h3>
 
@@ -244,7 +259,7 @@
                             <h3>Contact for Price</h3>
                         </div>
 
-                        <a href="House-Details.html" class="button">
+                        <a href="house2-Details.html" class="button">
                             View House
                         </a>
 
@@ -276,6 +291,29 @@
         </p>
 
     </footer>
+    
+    <!-- MEDLOGE IMAGE VIEWER -->
+    <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+
+        <button
+            type="button"
+            class="lightbox-close"
+            id="closeLightbox"
+            aria-label="Close image viewer"
+        >
+            &times;
+        </button>
+
+        <img
+            src=""
+            alt=""
+            id="lightboxImage"
+        >
+
+        <p id="lightboxCaption"></p>
+
+    </div>
+
     
     <script src="script.js"></script>
 

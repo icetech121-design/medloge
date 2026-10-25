@@ -13,7 +13,7 @@ if (welcomeTitle) {
 
 const saveButtons = document.querySelectorAll(".save-button");
 const toast = document.getElementById("toast-notification");
-const STORAGE_SAVED_KEY = "medloge_saved_properties"; // Keep this key unified across files
+const STORAGE_SAVED_KEY =  "medlogeSavedHouses"; // Keep this key unified across files
 
 function getSavedHouses() {
     const rawSaved = localStorage.getItem(STORAGE_SAVED_KEY);
@@ -64,31 +64,6 @@ function showToastNotification(message) {
     setTimeout(() => {
         toast.classList.remove("show-toast");
     }, 2500);
-}
-
-    // RENDER SYSTEM ON SAVED COLLECTION VIEW PAGE
-if (window.location.pathname.includes("Saved.html")) {
-    const savedHouses = getSavedHouses();
-    const allCollectionCards = document.querySelectorAll(".house-card");
-
-    allCollectionCards.forEach(card => {
-        const id = card.getAttribute("data-house-id");
-        if (!savedHouses.includes(id)) {
-            card.style.display = "none";
-        } else {
-            card.style.display = "";
-        }
-    });
-
-    const visibleCards = Array.from(allCollectionCards).filter(c => c.style.display !== "none");
-    if (visibleCards.length === 0) {
-        const container = document.querySelector(".house-listings") || document.body;
-        const emptyMsg = document.createElement("p");
-        emptyMsg.textContent = "You haven't saved any apartments around UNTH yet.";
-        emptyMsg.style.textAlign = "center";
-        emptyMsg.style.padding = "40px 20px";
-        container.appendChild(emptyMsg);
-    }
 }
 
 
@@ -151,7 +126,7 @@ function renderSavedHouses() {
     const subCountBadge = document.getElementById("total-properties-count");
 
     // 2. Fetch saved list string from localStorage
-    let savedIds = JSON.parse(localStorage.getItem("medlogeSavedHouses")) || [];
+    const savedIds = getSavedHouses(); [];
 
     // 3. Filter our main data array down to only matching items
     const savedHousesData = ALL_MEDLOGE_HOUSES.filter(house => savedIds.includes(house.id));
@@ -216,13 +191,13 @@ function renderSavedHouses() {
 
 // 7. Global function execution allowing users to click '♥' to remove cards instantly
 window.removeHouseDirectly = function(houseId) {
-    let savedIds = JSON.parse(localStorage.getItem("medlogeSavedHouses")) || [];
+    let savedIds = getSavedHouses(); 
     
     // Remove selected item out of the storage list arrays
     savedIds = savedIds.filter(id => id !== houseId);
     
     // Save state update & re-render view seamlessly
-    localStorage.setItem("medlogeSavedHouses", JSON.stringify(savedIds));
+    localStorage.setItem(STORAGE_SAVED_KEY, JSON.stringify(savedIds));
     renderSavedHouses();
 };
 
@@ -507,7 +482,107 @@ if (window.location.pathname.includes("Inspection-Success.html")) {
     }
 }
 
+// ========================================
+// MEDLOGE PROPERTY IMAGE VIEWER
+// ========================================
 
+
+// 1. GET THE IMAGE VIEWER ELEMENTS
+
+const lightbox = document.getElementById("imageLightbox");
+
+const lightboxImage = document.getElementById("lightboxImage");
+
+const lightboxCaption = document.getElementById("lightboxCaption");
+
+const closeLightbox = document.getElementById("closeLightbox");
+
+
+// 2. CHECK IF THE IMAGE VIEWER EXISTS
+
+if (lightbox && lightboxImage && closeLightbox && lightboxCaption) {
+
+    // 3. LISTEN FOR CLICKS ON THE PAGE
+
+    document.addEventListener("click", function (event) {
+
+        // Find out whether a property image was clicked
+
+        const clickedImage = event.target.closest(".property-image");
+
+        // If no property image was clicked, stop here
+
+        if (!clickedImage) return;
+
+
+        // 4. GET THE CLICKED IMAGE INFORMATION
+
+        lightboxImage.src = clickedImage.src;
+
+        lightboxImage.alt = clickedImage.alt;
+
+        lightboxCaption.textContent = clickedImage.alt;
+
+
+        // 5. OPEN THE IMAGE VIEWER
+
+        lightbox.classList.add("active");
+
+        lightbox.setAttribute("aria-hidden", "false");
+
+        document.body.style.overflow = "hidden";
+
+        closeLightbox.focus();
+
+    });
+
+
+    // 6. CREATE A FUNCTION TO CLOSE THE VIEWER
+
+    function closeImageViewer() {
+
+        lightbox.classList.remove("active");
+
+        lightbox.setAttribute("aria-hidden", "true");
+
+        lightboxImage.src = "";
+
+        document.body.style.overflow = "";
+
+    }
+
+
+    // 7. CLOSE WHEN THE X BUTTON IS CLICKED
+
+    closeLightbox.addEventListener("click", closeImageViewer);
+
+
+    // 8. CLOSE WHEN THE DARK BACKGROUND IS CLICKED
+
+    lightbox.addEventListener("click", function (event) {
+
+        if (event.target === lightbox) {
+
+            closeImageViewer();
+
+        }
+
+    });
+
+
+    // 9. CLOSE WHEN ESCAPE IS PRESSED
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape" && lightbox.classList.contains("active")) {
+
+            closeImageViewer();
+
+        }
+
+    });
+
+}
 
 
 

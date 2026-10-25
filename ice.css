@@ -1,0 +1,2701 @@
+
+/* =========================================
+   MEDLOGE — HOUSE LISTING PAGE
+   Professional horizontal property cards
+========================================= */
+
+:root {
+    --medloge-navy: #10243A;
+    --medloge-blue: #1769AA;
+    --medloge-gold: #D9A441;
+    --medloge-background: #F4F7FB;
+    --medloge-white: #FFFFFF;
+    --medloge-text: #25364A;
+    --medloge-muted: #718096;
+    --medloge-border: #E5EAF0;
+}
+
+/* PAGE BACKGROUND */
+
+body {
+    background: var(--medloge-background);
+    color: var(--medloge-text);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* HEADER */
+
+.page-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 6%;
+    background: var(--medloge-navy);
+    color: white;
+}
+
+.page-header > a {
+    color: white;
+    font-size: 23px;
+    text-decoration: none;
+}
+
+.page-header h2 {
+    margin: 0;
+    font-size: 21px;
+}
+
+.page-header p {
+    margin: 5px 0 0;
+    color: #C4D1DF;
+    font-size: 13px;
+}
+
+.menu-btn {
+    margin-left: auto;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.header-dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 6%;
+    top: 75px;
+    z-index: 100;
+    min-width: 210px;
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.header-dropdown-menu a {
+    display: block;
+    padding: 12px;
+    color: var(--medloge-navy);
+    text-decoration: none;
+    border-radius: 7px;
+}
+
+.header-dropdown-menu a:hover {
+    background: #EDF4FA;
+}
+
+/* MAIN CONTENT */
+
+main {
+    width: min(1100px, 90%);
+    margin: 35px auto;
+}
+
+/* SEARCH SECTION */
+
+.house-search {
+    background: linear-gradient(120deg, #10243A, #1769AA);
+    color: white;
+    padding: 38px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+}
+
+.house-search h1 {
+    margin: 0 0 10px;
+    font-size: clamp(25px, 4vw, 36px);
+}
+
+.house-search > p {
+    color: #D8E5F2;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    border: none;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-box button,
+.filter-button {
+    background: var(--medloge-gold);
+    color: var(--medloge-navy);
+    border: none;
+    border-radius: 9px;
+    padding: 13px 23px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* FILTER SECTION */
+
+.house-filters {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 35px;
+    border: 1px solid var(--medloge-border);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: var(--medloge-navy);
+    font-size: 21px;
+}
+
+.section-heading p,
+.section-heading span {
+    color: var(--medloge-muted);
+    font-size: 13px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.filter-grid label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.filter-grid select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--medloge-border);
+    border-radius: 8px;
+    background: white;
+    color: var(--medloge-text);
+}
+
+/* HOUSE LISTINGS */
+
+.house-listings {
+    margin-top: 35px;
+}
+
+.listing-count {
+    background: #E7F1FA;
+    color: var(--medloge-blue);
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* =========================================
+   HORIZONTAL HOUSE CARD
+   IMAGE LEFT — DETAILS RIGHT
+========================================= */
+
+.house-card {
+    display: grid;
+    grid-template-columns: 38% 62%;
+    background: var(--medloge-white);
+    border: 1px solid var(--medloge-border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 22px;
+    min-height: 245px;
+    box-shadow: 0 5px 18px rgba(16, 36, 58, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.house-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(16, 36, 58, 0.10);
+}
+
+/* IMAGE CONTAINER */
+
+.listing-image {
+    position: relative;
+    width: 100%;
+    min-height: 245px;
+    overflow: hidden;
+}
+
+.listing-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 245px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* FEATURED LABEL */
+
+.listing-status {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--medloge-gold);
+    color: var(--medloge-navy);
+    padding: 7px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.toast-banner {
+    position: fixed;
+    top: -80px; /* Hidden above the screen bounds */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333333;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* Higher than everything else on the layout */
+    transition: top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snappy bounce animation */
+}
+
+/* CLASS TOGGLED VIA JAVASCRIPT */
+.toast-banner.show-toast {
+    top: 20px; /* Slides down into view */
+}
+
+/* SAVE BUTTON */
+
+.save-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: #D94A62;
+    font-size: 23px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+}
+
+.save-button:hover {
+    transform: scale(1.08);
+}
+
+/* HOUSE INFORMATION */
+
+.listing-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 23px 25px;
+    min-width: 0;
+}
+
+.listing-type {
+    color: var(--medloge-blue);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0 0 9px;
+}
+
+.listing-content > h3 {
+    color: var(--medloge-navy);
+    font-size: 21px;
+    margin: 0 0 10px;
+    line-height: 1.35;
+}
+
+.listing-location {
+    color: var(--medloge-muted);
+    font-size: 13px;
+    margin: 0 0 18px;
+}
+
+/* PROPERTY FACILITIES */
+
+.listing-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+.listing-details span {
+    background: #F1F5F9;
+    color: #526477;
+    padding: 8px 11px;
+    border-radius: 6px;
+    font-size: 11px;
+}
+
+/* RENT AND VIEW BUTTON */
+
+.listing-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid var(--medloge-border);
+    padding-top: 17px;
+    margin-top: auto;
+}
+
+.listing-bottom p {
+    color: var(--medloge-muted);
+    font-size: 12px;
+    margin: 0 0 5px;
+}
+
+.listing-bottom h3 {
+    color: var(--medloge-navy);
+    font-size: 17px;
+    margin: 0;
+}
+
+.button {
+    display: inline-block;
+    background: var(--medloge-blue);
+    color: white;
+    padding: 12px 19px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.button:hover {
+    background: var(--medloge-navy);
+}
+
+/* EMPTY SEARCH STATE */
+
+.no-houses-found {
+    text-align: center;
+    background: white;
+    border: 1px solid var(--medloge-border);
+    padding: 40px 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.no-houses-icon {
+    font-size: 40px;
+    color: var(--medloge-blue);
+}
+
+.no-houses-found h3 {
+    color: var(--medloge-navy);
+}
+
+.no-houses-found p {
+    color: var(--medloge-muted);
+    line-height: 1.6;
+}
+
+.no-houses-found .button {
+    border: none;
+    cursor: pointer;
+}
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 20px;
+    background: white;
+    border-top: 1px solid var(--medloge-border);
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    color: var(--medloge-navy);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--medloge-muted);
+    font-size: 12px;
+}
+
+/* =========================================
+   TABLET AND MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 700px) {
+
+    main {
+        width: 92%;
+        margin: 22px auto;
+    }
+
+    .house-search {
+        padding: 25px 20px;
+    }
+
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .house-card {
+        grid-template-columns: 40% 60%;
+        min-height: 210px;
+    }
+
+    .listing-image,
+    .listing-image img {
+        min-height: 210px;
+    }
+
+    .listing-content {
+        padding: 15px;
+    }
+
+    .listing-content > h3 {
+        font-size: 16px;
+    }
+
+    .listing-location {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .listing-details {
+        gap: 5px;
+        margin-bottom: 12px;
+    }
+
+    .listing-details span {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    .listing-bottom {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .listing-bottom h3 {
+        font-size: 14px;
+    }
+
+    .button {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+
+    .bottom-nav {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 420px) {
+
+    .house-card {
+        grid-template-columns: 1fr;
+    }
+
+    .listing-image {
+        height: 200px;
+        min-height: 200px;
+    }
+
+    .listing-image img {
+        height: 200px;
+        min-height: 200px;
+    }
+
+    .listing-content {
+        padding: 20px;
+    }
+
+    .listing-content > h3 {
+        font-size: 19px;
+    }
+
+    .listing-bottom {
+        align-items: center;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   MEDLOGE — INSPECTION SUCCESS PAGE
+   Premium confirmation interface
+========================================= */
+
+/* PAGE FOUNDATION */
+
+body {
+    background: var(--medloge-background, #F4F7FB);
+    color: var(--medloge-text, #25364A);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* HEADER */
+
+.success-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 7%;
+    background: var(--medloge-navy, #10243A);
+    color: white;
+}
+
+.success-header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.10);
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    transition: background 0.2s ease;
+}
+
+.success-header a:hover {
+    background: rgba(255,255,255,0.20);
+}
+
+.success-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* MAIN PAGE LAYOUT */
+
+.success-main {
+    width: min(760px, 90%);
+    margin: 45px auto;
+}
+
+/* =========================================
+   CONGRATULATIONS SECTION
+========================================= */
+
+.success-intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.success-intro > span {
+    display: inline-block;
+    background: #FFF3D8;
+    color: #94650C;
+    padding: 9px 17px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.success-intro h1 {
+    color: var(--medloge-navy, #10243A);
+    font-size: clamp(27px, 5vw, 38px);
+    margin: 0 0 12px;
+    line-height: 1.25;
+}
+
+.success-intro h1 span {
+    color: var(--medloge-blue, #1769AA);
+}
+
+.success-intro p {
+    color: var(--medloge-muted, #718096);
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =========================================
+   INSPECTION SUMMARY CARD
+========================================= */
+
+.booking-summary-card {
+    background: white;
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid var(--medloge-border, #E5EAF0);
+    box-shadow: 0 5px 20px rgba(16,36,58,0.04);
+    margin-bottom: 24px;
+}
+
+.booking-summary-card > h2 {
+    color: var(--medloge-muted, #718096);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0 0 20px;
+}
+
+.booking-summary-card > h3 {
+    color: var(--medloge-navy, #10243A);
+    font-size: 19px;
+    margin: 0 0 18px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--medloge-border, #E5EAF0);
+}
+
+.summary-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.summary-details p {
+    background: #F5F8FC;
+    border: 1px solid #EAF0F6;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.summary-details strong {
+    display: block;
+    color: var(--medloge-navy, #10243A);
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.summary-details span {
+    color: var(--medloge-muted, #718096);
+    font-weight: 500;
+}
+
+/* =========================================
+   MAIN SUCCESS CARD
+========================================= */
+
+.success-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--medloge-border, #E5EAF0);
+    box-shadow: 0 5px 20px rgba(16,36,58,0.04);
+}
+
+/* REQUEST STATUS */
+
+.request-status {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #FFF8E9;
+    border: 1px solid #F3E2B9;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.status-dot {
+    flex-shrink: 0;
+    width: 11px;
+    height: 11px;
+    background: #D9A441;
+    border-radius: 50%;
+    margin-top: 5px;
+    box-shadow: 0 0 0 4px rgba(217,164,65,0.15);
+}
+
+.request-status strong {
+    color: #805C14;
+    font-size: 14px;
+}
+
+.request-status p {
+    color: #806E4C;
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 7px 0 0;
+}
+
+/* DIVIDER */
+
+.success-divider {
+    height: 1px;
+    background: var(--medloge-border, #E5EAF0);
+    margin: 28px 0;
+}
+
+/* NEXT STEPS HEADING */
+
+.success-card > h2 {
+    color: var(--medloge-navy, #10243A);
+    font-size: 21px;
+    margin: 0 0 22px;
+}
+
+/* =========================================
+   INSPECTION PROGRESS STEPS
+========================================= */
+
+.success-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.success-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding-bottom: 24px;
+    position: relative;
+}
+
+/* NUMBER CIRCLE */
+
+.success-step > span {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #EAF2FA;
+    color: var(--medloge-blue, #1769AA);
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* STEP TEXT */
+
+.success-step h3 {
+    color: var(--medloge-navy, #10243A);
+    font-size: 15px;
+    margin: 2px 0 6px;
+}
+
+.success-step p {
+    color: var(--medloge-muted, #718096);
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* =========================================
+   IMPORTANT NOTICE
+========================================= */
+
+.success-notice {
+    background: #F0F5FA;
+    border-left: 4px solid var(--medloge-blue, #1769AA);
+    border-radius: 8px;
+    padding: 18px;
+    margin: 8px 0 25px;
+}
+
+.success-notice strong {
+    color: var(--medloge-navy, #10243A);
+    font-size: 14px;
+}
+
+.success-notice p {
+    color: #607286;
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 8px 0 0;
+}
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.success-primary-button,
+.success-secondary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 48px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.success-primary-button {
+    background: var(--medloge-blue, #1769AA);
+    color: white;
+    margin-bottom: 12px;
+}
+
+.success-primary-button:hover {
+    background: var(--medloge-navy, #10243A);
+    transform: translateY(-2px);
+}
+
+.success-secondary-button {
+    background: #F1F5F9;
+    color: var(--medloge-navy, #10243A);
+}
+
+.success-secondary-button:hover {
+    background: #E4EBF3;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    color: var(--medloge-muted, #718096);
+    font-size: 12px;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 700px) {
+
+    .success-main {
+        width: 92%;
+        margin: 30px auto;
+    }
+
+    .success-header {
+        padding: 18px 5%;
+    }
+
+    .booking-summary-card,
+    .success-card {
+        padding: 22px;
+    }
+
+}
+
+/* =========================================
+   SMALL PHONE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 480px) {
+
+    .success-intro h1 {
+        font-size: 27px;
+    }
+
+    .success-intro p {
+        font-size: 13px;
+    }
+
+    .booking-summary-card,
+    .success-card {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .summary-details {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-details p {
+        padding: 13px;
+    }
+
+    .request-status {
+        padding: 14px;
+    }
+
+    .success-card > h2 {
+        font-size: 19px;
+    }
+
+    .success-step {
+        gap: 12px;
+    }
+
+}
+
+/* =========================================
+   MEDLOGE — PREMIUM INSPECTION PAGE
+========================================= */
+
+/* PAGE FOUNDATION */
+
+body {
+    background: var(--medloge-background, #F4F7FB);
+    color: var(--medloge-text, #25364A);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.inspection-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--medloge-navy, #10243A);
+    color: white;
+    padding: 20px 7%;
+}
+
+.inspection-header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.10);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    transition: background 0.2s ease;
+}
+
+.inspection-header a:hover {
+    background: rgba(255,255,255,0.20);
+}
+
+.inspection-header h2 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.inspection-main {
+    width: min(760px, 90%);
+    margin: 40px auto;
+}
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.inspection-intro {
+    margin-bottom: 28px;
+}
+
+.inspection-intro > p:first-child {
+    display: inline-block;
+    background: #FFF3D8;
+    color: #94650C;
+    padding: 9px 15px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    margin: 0 0 14px;
+}
+
+.inspection-intro h1 {
+    color: var(--medloge-navy, #10243A);
+    font-size: clamp(27px, 5vw, 38px);
+    line-height: 1.2;
+    margin: 0 0 12px;
+}
+
+.inspection-intro > p:last-child {
+    color: var(--medloge-muted, #718096);
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 550px;
+    margin: 0;
+}
+
+/* =========================================
+   SELECTED PROPERTY CARD
+========================================= */
+
+.selected-property {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    align-items: center;
+    background: white;
+    border: 1px solid var(--medloge-border, #E5EAF0);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 18px rgba(16,36,58,0.04);
+}
+
+.selected-property img {
+    display: block;
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.selected-property span {
+    display: inline-block;
+    color: var(--medloge-blue, #1769AA);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 9px;
+}
+
+.selected-property h2 {
+    color: var(--medloge-navy, #10243A);
+    font-size: 19px;
+    margin: 0 0 7px;
+}
+
+.selected-property p {
+    color: var(--medloge-muted, #718096);
+    font-size: 13px;
+    margin: 0 0 7px;
+}
+
+.selected-property small {
+    color: #9AA6B2;
+    font-size: 11px;
+}
+
+/* =========================================
+   FORM CONTAINER
+========================================= */
+
+.inspection-form-section {
+    background: white;
+    padding: 30px;
+    border: 1px solid var(--medloge-border, #E5EAF0);
+    border-radius: 17px;
+    box-shadow: 0 5px 22px rgba(16,36,58,0.05);
+}
+
+/* =========================================
+   FORM SECTION HEADINGS
+========================================= */
+
+.form-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 10px 0 23px;
+}
+
+.form-heading > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    background: #EAF2FA;
+    color: var(--medloge-blue, #1769AA);
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.form-heading h2 {
+    color: var(--medloge-navy, #10243A);
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+.form-heading p {
+    color: var(--medloge-muted, #718096);
+    font-size: 12px;
+    margin: 0;
+}
+
+/* SECOND AND THIRD SECTION SPACING */
+
+.inspection-form-section form > .form-heading:not(:first-child) {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid var(--medloge-border, #E5EAF0);
+}
+
+/* =========================================
+   FORM LABELS
+========================================= */
+
+.inspection-form-section form > label {
+    display: block;
+    color: var(--medloge-navy, #10243A);
+    font-size: 13px;
+    font-weight: 700;
+    margin: 20px 0 9px;
+}
+
+/* =========================================
+   INPUTS, SELECT AND TEXTAREA
+========================================= */
+
+.inspection-form-section input:not([type="radio"]),
+.inspection-form-section select,
+.inspection-form-section textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background: #FAFCFE;
+    color: var(--medloge-text, #25364A);
+    border: 1px solid #DCE4ED;
+    border-radius: 9px;
+    padding: 14px 15px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease,
+                background 0.2s ease;
+}
+
+.inspection-form-section input:not([type="radio"]):focus,
+.inspection-form-section select:focus,
+.inspection-form-section textarea:focus {
+    border-color: var(--medloge-blue, #1769AA);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(23,105,170,0.10);
+}
+
+.inspection-form-section input::placeholder,
+.inspection-form-section textarea::placeholder {
+    color: #A0AAB6;
+}
+
+.inspection-form-section textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   INSPECTION METHOD CARDS
+========================================= */
+
+.inspection-methods {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin: 15px 0 25px;
+}
+
+.method-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    background: #FAFCFE;
+    border: 1px solid #DCE4ED;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+/* RADIO BUTTON */
+
+.method-card input[type="radio"] {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 17px;
+    height: 17px;
+    accent-color: var(--medloge-blue, #1769AA);
+    cursor: pointer;
+}
+
+.method-card > span {
+    font-size: 28px;
+}
+
+.method-card strong {
+    color: var(--medloge-navy, #10243A);
+    font-size: 14px;
+}
+
+.method-card small {
+    color: var(--medloge-muted, #718096);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* SELECTED RADIO CARD */
+
+.method-card:has(input:checked) {
+    background: #F0F6FC;
+    border: 1px solid var(--medloge-blue, #1769AA);
+    box-shadow: 0 0 0 3px rgba(23,105,170,0.08);
+}
+
+/* KEYBOARD ACCESSIBILITY */
+
+.method-card:focus-within {
+    outline: 3px solid rgba(23,105,170,0.15);
+    outline-offset: 2px;
+}
+
+/* =========================================
+   IMPORTANT NOTICE
+========================================= */
+
+.inspection-notice {
+    background: #FFF8E9;
+    border: 1px solid #F3E2B9;
+    border-left: 4px solid var(--medloge-gold, #D9A441);
+    border-radius: 9px;
+    padding: 17px;
+    margin: 25px 0;
+}
+
+.inspection-notice strong {
+    color: #805C14;
+    font-size: 13px;
+}
+
+.inspection-notice p {
+    color: #806E4C;
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 8px 0 0;
+}
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.inspection-submit {
+    display: block;
+    width: 100%;
+    min-height: 51px;
+    background: var(--medloge-blue, #1769AA);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.inspection-submit:hover {
+    background: var(--medloge-navy, #10243A);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(16,36,58,0.15);
+}
+
+.inspection-submit:active {
+    transform: translateY(0);
+}
+
+.inspection-submit:focus-visible {
+    outline: 3px solid rgba(23,105,170,0.3);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   BOTTOM NAVIGATION
+========================================= */
+
+.bottom-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 22px 10px;
+    margin-top: 35px;
+    border-top: 1px solid var(--medloge-border, #E5EAF0);
+}
+
+.bottom-nav a {
+    color: var(--medloge-navy, #10243A);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.bottom-nav a:hover {
+    color: var(--medloge-blue, #1769AA);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    color: var(--medloge-muted, #718096);
+    font-size: 12px;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 700px) {
+
+    .inspection-main {
+        width: 92%;
+        margin: 28px auto;
+    }
+
+    .inspection-header {
+        padding: 18px 5%;
+    }
+
+    .inspection-form-section {
+        padding: 24px;
+    }
+
+    .selected-property {
+        grid-template-columns: 125px 1fr;
+        gap: 15px;
+    }
+
+    .selected-property img {
+        height: 115px;
+    }
+
+}
+
+/* =========================================
+   SMALL PHONE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 480px) {
+
+    .inspection-main {
+        width: 92%;
+        margin: 24px auto;
+    }
+
+    .inspection-intro h1 {
+        font-size: 28px;
+    }
+
+    .inspection-intro > p:last-child {
+        font-size: 13px;
+    }
+
+    .inspection-form-section {
+        padding: 19px;
+        border-radius: 13px;
+    }
+
+    .selected-property {
+        grid-template-columns: 105px 1fr;
+        padding: 11px;
+        gap: 12px;
+    }
+
+    .selected-property img {
+        height: 110px;
+    }
+
+    .selected-property h2 {
+        font-size: 15px;
+    }
+
+    .selected-property p {
+        font-size: 11px;
+    }
+
+    .selected-property small {
+        font-size: 10px;
+    }
+
+    .inspection-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .method-card {
+        padding: 17px;
+    }
+
+    .form-heading h2 {
+        font-size: 16px;
+    }
+
+    .bottom-nav {
+        gap: 17px;
+    }
+
+}
+
+/* =========================================
+   MEDLOGE — HOUSE DETAILS PAGE
+========================================= */
+
+:root {
+    --details-navy: #10243A;
+    --details-blue: #1769AA;
+    --details-gold: #D9A441;
+    --details-bg: #F4F7FB;
+    --details-white: #FFFFFF;
+    --details-text: #243447;
+    --details-muted: #718096;
+    --details-border: #E5EAF0;
+}
+
+/* PAGE BACKGROUND */
+
+body {
+    background: var(--details-bg);
+    color: var(--details-text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+
+.details-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 7%;
+    background: var(--details-navy);
+}
+
+.details-header a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.details-header .menu-btn {
+    background: rgba(255,255,255,0.12);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 9px;
+    padding: 9px 14px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* MAIN PAGE WIDTH */
+
+.details-main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto 70px;
+}
+
+/* MAIN PROPERTY IMAGE */
+
+.property-hero {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.property-main-image {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #DCE3EB;
+    box-shadow: 0 8px 25px rgba(16,36,58,0.10);
+}
+
+.property-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.property-badge {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    background: var(--details-gold);
+    color: var(--details-navy);
+    padding: 9px 16px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* PROPERTY INFORMATION */
+
+.property-overview {
+    background: white;
+    border: 1px solid var(--details-border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(16,36,58,0.04);
+}
+
+.property-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.property-category {
+    color: var(--details-blue);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+}
+
+.property-heading h1 {
+    color: var(--details-navy);
+    font-size: 30px;
+    margin: 0 0 12px;
+    line-height: 1.3;
+}
+
+.property-location {
+    color: var(--details-muted);
+    font-size: 15px;
+    margin: 0;
+}
+
+.details-save-button {
+    background: #F0F6FC;
+    border: 1px solid #D8E7F5;
+    color: var(--details-blue);
+    padding: 11px 16px;
+    border-radius: 9px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.details-save-button:hover {
+    background: var(--details-blue);
+    color: white;
+}
+
+.property-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--details-border);
+    margin-top: 25px;
+    padding-top: 20px;
+}
+
+.property-price p {
+    color: var(--details-muted);
+    margin: 0;
+    font-size: 14px;
+}
+
+.property-price a {
+    background: var(--details-navy);
+    color: white;
+    padding: 11px 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* SECTION HEADINGS */
+
+.property-highlights,
+.apartment-gallery,
+.apartment-video,
+.property-facilities,
+.property-description,
+.property-location-section {
+    background: white;
+    border: 1px solid var(--details-border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(16,36,58,0.035);
+}
+
+.property-highlights h2,
+.property-facilities h2,
+.property-description h2,
+.property-location-section h2 {
+    color: var(--details-navy);
+    font-size: 21px;
+    margin: 0 0 22px;
+}
+
+/* APARTMENT OVERVIEW */
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.highlight-item {
+    background: var(--details-bg);
+    border: 1px solid var(--details-border);
+    border-radius: 12px;
+    padding: 20px 12px;
+    text-align: center;
+}
+
+.highlight-item span {
+    font-size: 27px;
+}
+
+.highlight-item p {
+    color: var(--details-text);
+    font-size: 13px;
+    font-weight: bold;
+    margin: 10px 0 0;
+}
+
+/* GALLERY HEADING */
+
+.details-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.details-section-heading h2 {
+    color: var(--details-navy);
+    font-size: 21px;
+    margin: 0 0 7px;
+}
+
+.details-section-heading p {
+    color: var(--details-muted);
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.gallery-label,
+.video-label {
+    background: #FFF5DF;
+    color: #9A6A13;
+    padding: 8px 13px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* GALLERY */
+
+.gallery-main {
+    height: 330px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 13px;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+}
+
+.gallery-item {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #DCE3EB;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item span {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background: rgba(16,36,58,0.85);
+    color: white;
+    padding: 7px 11px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* VIDEO TOUR */
+
+.video-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+}
+
+.video-container video {
+    width: 100%;
+    max-height: 480px;
+    display: block;
+}
+
+.video-caption {
+    color: var(--details-muted);
+    font-size: 13px;
+    margin: 12px 0 0;
+}
+
+/* FACILITIES */
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+}
+
+.facilities-grid p {
+    background: var(--details-bg);
+    border: 1px solid var(--details-border);
+    border-radius: 9px;
+    padding: 15px;
+    margin: 0;
+    font-size: 14px;
+    color: var(--details-text);
+}
+
+/* PROPERTY DESCRIPTION */
+
+.property-description p {
+    color: var(--details-muted);
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 12px;
+}
+
+/* LOCATION INFORMATION */
+
+.property-location-section p {
+    color: var(--details-muted);
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--details-border);
+    margin: 0;
+}
+
+.property-location-section p:last-child {
+    border-bottom: none;
+}
+
+/* PROPERTY ACTION BUTTONS */
+
+.property-actions {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.contact-button,
+.inspection-button {
+    min-height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.contact-button {
+    background: white;
+    color: var(--details-navy);
+    border: 1px solid var(--details-navy);
+}
+
+.inspection-button {
+    background: var(--details-blue);
+    color: white;
+    border: 1px solid var(--details-blue);
+}
+
+.contact-button:hover {
+    background: var(--details-navy);
+    color: white;
+}
+
+.inspection-button:hover {
+    background: var(--details-navy);
+    border-color: var(--details-navy);
+    transform: translateY(-2px);
+}
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+    padding: 15px 8px;
+    border-top: 1px solid var(--details-border);
+}
+
+.bottom-nav a {
+    color: var(--details-muted);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--details-navy);
+    color: white;
+    text-align: center;
+    padding: 22px 15px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 768px) {
+
+    .details-main {
+        width: 94%;
+        margin-top: 20px;
+    }
+
+    .property-main-image {
+        height: 350px;
+    }
+
+    .highlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .facilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-item {
+        height: 140px;
+    }
+
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 480px) {
+
+    .details-header {
+        padding: 15px 5%;
+    }
+
+    .details-main {
+        width: 94%;
+        margin-top: 15px;
+    }
+
+    .property-main-image {
+        height: 260px;
+        border-radius: 12px;
+    }
+
+    .property-overview,
+    .property-highlights,
+    .apartment-gallery,
+    .apartment-video,
+    .property-facilities,
+    .property-description,
+    .property-location-section {
+        padding: 19px;
+        border-radius: 12px;
+    }
+
+    .property-heading {
+        flex-direction: column;
+    }
+
+    .property-heading h1 {
+        font-size: 23px;
+    }
+
+    .property-price {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .highlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gallery-main {
+        height: 230px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-item {
+        height: 125px;
+    }
+
+    .facilities-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+    }
+
+    .facilities-grid p {
+        font-size: 12px;
+        padding: 12px 9px;
+    }
+
+    .details-section-heading {
+        align-items: flex-start;
+    }
+
+    .details-section-heading h2 {
+        font-size: 18px;
+    }
+
+    .details-section-heading p {
+        font-size: 12px;
+    }
+
+    .property-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-nav a {
+        font-size: 11px;
+    }
+
+}
+
+
+/* ==================================================
+   MEDLOGE — ABOUT PAGE
+   Premium Corporate Technology Design
+================================================== */
+
+.about-page {
+    --about-navy: #10243A;
+    --about-blue: #1769AA;
+    --about-gold: #D9A441;
+    --about-bg: #F4F7FB;
+    --about-white: #FFFFFF;
+    --about-text: #243447;
+    --about-muted: #718096;
+    --about-border: #E5EAF0;
+
+    background: var(--about-bg);
+    color: var(--about-text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+
+.about-page .page-header {
+    background: var(--about-navy);
+    color: white;
+    padding: 24px 7%;
+    text-align: left;
+    border-bottom: 3px solid var(--about-gold);
+}
+
+.about-page .page-header a {
+    display: inline-block;
+    color: #DCE8F5;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 25px;
+    transition: color 0.2s ease;
+}
+
+.about-page .page-header a:hover {
+    color: var(--about-gold);
+}
+
+.about-page .page-header h2 {
+    font-size: 27px;
+    margin: 0 0 8px;
+    color: white;
+    letter-spacing: -0.5px;
+}
+
+.about-page .page-header p {
+    color: #C3D0DE;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* MAIN CONTAINER */
+
+.about-page .about-main {
+    width: 90%;
+    max-width: 1080px;
+    margin: 35px auto 70px;
+}
+
+/* SHARED SECTION LABELS */
+
+.about-page .about-section-heading span,
+.about-page .about-hero > span,
+.about-page .about-coming-soon > span {
+    display: inline-block;
+    color: var(--about-blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    margin-bottom: 12px;
+}
+
+/* HERO SECTION */
+
+.about-page .about-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        120deg,
+        #10243A 0%,
+        #173D61 65%,
+        #1769AA 100%
+    );
+    color: white;
+    padding: 65px 55px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    box-shadow: 0 12px 35px rgba(16,36,58,0.13);
+}
+
+.about-page .about-hero::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: -100px;
+    top: -110px;
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 35px rgba(255,255,255,0.035),
+        0 0 0 70px rgba(255,255,255,0.025);
+    pointer-events: none;
+}
+
+.about-page .about-hero > span {
+    color: var(--about-gold);
+}
+
+.about-page .about-hero h1 {
+    max-width: 680px;
+    color: white;
+    font-size: clamp(34px, 5vw, 53px);
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin: 8px 0 20px;
+}
+
+.about-page .about-hero p {
+    max-width: 700px;
+    color: #D5E1ED;
+    font-size: 16px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+/* GENERAL CONTENT SECTIONS */
+
+.about-page .about-section,
+.about-page .about-trust {
+    background: white;
+    border: 1px solid var(--about-border);
+    border-radius: 17px;
+    padding: 34px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 22px rgba(16,36,58,0.035);
+}
+
+.about-page .about-section-heading h2 {
+    color: var(--about-navy);
+    font-size: 26px;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+    margin: 0 0 18px;
+}
+
+.about-page .about-section > p,
+.about-page .about-trust > p {
+    color: var(--about-muted);
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 850px;
+    margin: 0 0 13px;
+}
+
+/* HOW IT WORKS */
+
+.about-page .about-process {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+    margin-top: 25px;
+}
+
+.about-page .about-process-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: var(--about-bg);
+    border: 1px solid var(--about-border);
+    border-radius: 13px;
+    padding: 23px;
+    transition: transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.about-page .about-process-item:hover {
+    transform: translateY(-5px);
+    border-color: #B9D2E8;
+    box-shadow: 0 10px 25px rgba(16,36,58,0.07);
+}
+
+.about-page .about-number {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--about-navy);
+    color: var(--about-gold);
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.about-page .about-process-item h3 {
+    color: var(--about-navy);
+    font-size: 17px;
+    margin: 0 0 9px;
+}
+
+.about-page .about-process-item p {
+    color: var(--about-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* TRUST SECTION */
+
+.about-page .about-trust {
+    background: #F9FBFD;
+    border-left: 4px solid var(--about-gold);
+}
+
+.about-page .trust-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.about-page .trust-list > div {
+    background: white;
+    border: 1px solid var(--about-border);
+    border-radius: 12px;
+    padding: 21px;
+}
+
+.about-page .trust-list strong {
+    display: block;
+    color: var(--about-navy);
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.about-page .trust-list p {
+    color: var(--about-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* V1 FEATURE GRID */
+
+.about-page .about-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.about-page .about-feature {
+    background: white;
+    border: 1px solid var(--about-border);
+    border-radius: 13px;
+    padding: 22px 17px;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.about-page .about-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(16,36,58,0.07);
+}
+
+.about-page .about-feature span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 47px;
+    height: 47px;
+    background: #EDF4FA;
+    border-radius: 12px;
+    font-size: 23px;
+    margin-bottom: 17px;
+}
+
+.about-page .about-feature h3 {
+    color: var(--about-navy);
+    font-size: 16px;
+    margin: 0 0 9px;
+}
+
+.about-page .about-feature p {
+    color: var(--about-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* FUTURE SERVICES */
+
+.about-page .about-coming-soon {
+    background: linear-gradient(
+        120deg,
+        #10243A,
+        #173D61
+    );
+    color: white;
+    padding: 36px;
+    border-radius: 17px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 28px rgba(16,36,58,0.10);
+}
+
+.about-page .about-coming-soon > span {
+    color: var(--about-gold);
+}
+
+.about-page .about-coming-soon h2 {
+    color: white;
+    font-size: 27px;
+    margin: 0 0 14px;
+}
+
+.about-page .about-coming-soon > p {
+    color: #C3D0DE;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 720px;
+    margin: 0 0 25px;
+}
+
+.about-page .about-v2-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+}
+
+.about-page .about-v2-list > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 10px;
+    padding: 16px;
+    color: white;
+    font-size: 21px;
+}
+
+.about-page .about-v2-list strong {
+    font-size: 13px;
+}
+
+/* FINAL CALL TO ACTION */
+
+.about-page .about-final {
+    background: white;
+    border: 1px solid var(--about-border);
+    border-radius: 17px;
+    padding: 45px 25px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-page .about-final h2 {
+    max-width: 600px;
+    color: var(--about-navy);
+    font-size: 31px;
+    line-height: 1.3;
+    margin: 0 auto 13px;
+}
+
+.about-page .about-final p {
+    color: var(--about-muted);
+    font-size: 14px;
+    margin: 0 0 24px;
+    line-height: 1.8;
+}
+
+.about-page .about-final .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--about-blue);
+    color: white;
+    text-decoration: none;
+    padding: 15px 27px;
+    min-height: 50px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.2s ease,
+                transform 0.2s ease;
+}
+
+.about-page .about-final .button:hover {
+    background: var(--about-navy);
+    transform: translateY(-2px);
+}
+
+/* BOTTOM NAVIGATION */
+
+.about-page .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+    padding: 15px 8px;
+    border-top: 1px solid var(--about-border);
+}
+
+.about-page .bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: var(--about-muted);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.about-page .bottom-nav a:hover {
+    color: var(--about-blue);
+}
+
+/* FOOTER */
+
+.about-page footer {
+    background: var(--about-navy);
+    color: #C3D0DE;
+    text-align: center;
+    padding: 23px 15px;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.about-page footer p {
+    margin: 0;
+}
+
+/* TABLET */
+
+@media (max-width: 800px) {
+
+    .about-page .about-feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-page .about-process {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page .trust-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 520px) {
+
+    .about-page .page-header {
+        padding: 20px 5%;
+    }
+
+    .about-page .page-header h2 {
+        font-size: 23px;
+    }
+
+    .about-page .about-main {
+        width: 93%;
+        margin-top: 20px;
+    }
+
+    .about-page .about-hero {
+        padding: 37px 24px;
+        border-radius: 14px;
+    }
+
+    .about-page .about-hero h1 {
+        font-size: 34px;
+        letter-spacing: -1px;
+    }
+
+    .about-page .about-hero p {
+        font-size: 14px;
+    }
+
+    .about-page .about-section,
+    .about-page .about-trust {
+        padding: 23px 19px;
+        border-radius: 13px;
+    }
+
+    .about-page .about-section-heading h2 {
+        font-size: 22px;
+    }
+
+    .about-page .about-process-item {
+        padding: 19px;
+    }
+
+    .about-page .about-feature-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .about-page .about-feature {
+        padding: 17px 13px;
+    }
+
+    .about-page .about-feature h3 {
+        font-size: 14px;
+    }
+
+    .about-page .about-feature p {
+        font-size: 12px;
+    }
+
+    .about-page .about-coming-soon {
+        padding: 25px 20px;
+    }
+
+    .about-page .about-coming-soon h2 {
+        font-size: 23px;
+    }
+
+    .about-page .about-v2-list {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page .about-final {
+        padding: 35px 20px;
+    }
+
+    .about-page .about-final h2 {
+        font-size: 25px;
+    }
+
+    .about-page .bottom-nav a {
+        font-size: 11px;
+    }
+
+}
+/* =====================================
+   MEDLOGE IMAGE LIGHTBOX
+===================================== */
+
+.image-lightbox {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    background: rgba(5, 12, 25, 0.95);
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 20px;
+}
+
+/* SHOW IMAGE VIEWER */
+
+.image-lightbox.active {
+    display: flex;
+}
+
+/* ENLARGED PROPERTY IMAGE */
+
+.image-lightbox img {
+    max-width: 90%;
+    max-height: 82vh;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* CLOSE BUTTON */
+
+.lightbox-close {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-size: 42px;
+    font-weight: 300;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+    transform: scale(1.15);
+}
+
+/* IMAGE DESCRIPTION */
+
+#lightboxCaption {
+    color: white;
+
+    font-size: 14px;
+
+    margin-top: 18px;
+
+    text-align: center;
+}
+
+/* CLICKABLE PROPERTY IMAGES */
+
+.property-image {
+    cursor: zoom-in;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+
+    .image-lightbox {
+        padding: 12px;
+    }
+
+    .image-lightbox img {
+        max-width: 100%;
+        max-height: 75vh;
+    }
+
+    .lightbox-close {
+        top: 12px;
+        right: 18px;
+
+        font-size: 36px;
+    }
+
+}
