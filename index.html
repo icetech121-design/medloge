@@ -3,72 +3,144 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Medloge-Enugu - Login</title>
-
+    <title>Home - Medloge-Enugu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+
+    <header class="home-header">
+        <div>
+            <h2>Medloge<span>-Enugu</span></h2>
+            <p>Find a place to call home.</p>
+        </div>
+
+        <button class="menu-btn" id="menu-toggle-btn" type="button">☰</button>
+
+        <nav class="header-dropdown-menu" id="header-dropdown">
+            <a href="Home.html">🏠 Home Dashboard</a>
+            <a href="Find-House.html">🔍 Search Accommodations</a>
+            <a href="Saved.html">❤️ Saved Properties</a>
+            <a href="Profile.html">👤 Student Profile</a>
+        </nav>
+
+        
+    </header>
+
     <main>
 
-        <h1>Welcome Back to Medloge-Enugu</h1>
+        <section class="welcome">
+            <p>WELCOME TO MEDLOGE 👋</p>
 
-        <p>Let's get started</p>
+            <h1 id="welcome-title">Find a place you'll love to live.</h1>
 
-        <form id="login-form">
+            <p>
+                Explore accommodation around UNTH
+                before you arrive.
+            </p>
+        </section>
+
+        <section class="home-search">
+            <h2>Where do you want to stay?</h2>
 
             <input
-                type="text"
-                id="username"
-                placeholder="Enter your username"
+                type="search"
+                id="home-search"
+                placeholder="Search location or house type"
             >
 
-            <input
-                type="password"
-                id="password"
-                placeholder="Enter your password"
-            >
+            <a href="Find-House.html" class="button">
+                🔍 Explore Houses
+            </a>
+        </section>
 
-            <button type="submit">Login</button>
+        <section class="home-quick-actions">
+            <h2>Quick Access</h2>
 
-        </form>
+            <div class="quick-action-grid">
+                <a href="Find-House.html">
+                    🏠
+                    <span>Find House</span>
+                </a>
 
-        <p>
-            New to Medloge?
-            <a href="Account.html">Create Account</a>
-        </p>
+                <a href="Saved.html">
+                    ❤️
+                    <span>Saved Houses</span>
+                </a>
+
+                <a href="Profile.html">
+                    👤
+                    <span>My Profile</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="featured-houses">
+            <div class="section-heading">
+                <h2>Explore Accommodation</h2>
+                <a href="Find-House.html">See all</a>
+            </div>
+
+            <article class="home-house-card">
+
+                <div class="home-house-image">
+                    <img
+                        src="images/ice8.jpg"
+                        alt="Apartment available around UNTH"
+                    >
+                </div>
+
+                <div class="home-house-info">
+                    <h3>Comfortable Student Apartment</h3>
+                    <p>📍 Around UNTH</p>
+                    <p>🏠 Self Contained</p>
+                    <a href="House-Details.html">
+                        View Details →
+                    </a>
+                </div>
+
+            </article>
+
+        </section>
+
+        <section class="why-medloge">
+            <h2>Why Medloge?</h2>
+
+            <p>✓ Explore accommodation in one place.</p>
+            <p>✓ View apartment photos and videos.</p>
+            <p>✓ Compare important property details.</p>
+            <p>✓ Request an inspection before renting.</p>
+        </section>
+
+        <section class="home-coming-soon">
+            <h2>More Coming Soon 🚀</h2>
+
+            <p>
+                We're working towards bringing more useful
+                services to the Medloge community.
+            </p>
+
+            <strong>Ride Services · Food · Laundry and More</strong>
+            <p>Coming Soon — V2</p>
+        </section>
 
     </main>
 
+    <nav class="bottom-nav">
+        <a href="Home.html">🏠 Home</a>
+        <a href="Find-House.html">🔍 Houses</a>
+        <a href="Saved.html">❤️ Saved</a>
+        <a href="Profile.html">👤 Profile</a>
+    </nav>
+
     <footer>
-        Most Trusted House-Rent App for Medical Students
+        <p>Medloge-Enugu — Helping students find accommodation around UNTH.</p>
     </footer>
 
     <script src="script.js"></script>
 
 </body>
-
 </html>
-
-//explain localStorage for me is they limeit of storage
-
-tell me what thid page is doing part by pat i know its a funticon but not yet called but i k ow thats a group of code they do the same thing start from 378
-     to
-450.. i did not see whey they called this founction tell me why the fuontion was not called
-
-when you crate a function (can some thig br writen inside?)//
-
-i also want you to explain this line 
-allCollectionCards.forEach(card => {
-        const id = card.getAttribute("data-house-id");
-        if (!savedHouses.includes(id)) {
-            card.style.display = "none";
-        } else {
-            card.style.display = "";
-        }
-    });
- what is card and card getAttribute what dose it do and why is it needed also something like card.style.disply is it talking about css

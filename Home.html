@@ -3,144 +3,53 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Home - Medloge-Enugu</title>
+    <title>Medloge-Enugu - Login</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-
-    <header class="home-header">
-        <div>
-            <h2>Medloge<span>-Enugu</span></h2>
-            <p>Find a place to call home.</p>
-        </div>
-
-        <button class="menu-btn" id="menu-toggle-btn" type="button">☰</button>
-
-        <nav class="header-dropdown-menu" id="header-dropdown">
-            <a href="Home.html">🏠 Home Dashboard</a>
-            <a href="Find-House.html">🔍 Search Accommodations</a>
-            <a href="Saved.html">❤️ Saved Properties</a>
-            <a href="Profile.html">👤 Student Profile</a>
-        </nav>
-
-        
-    </header>
-
     <main>
 
-        <section class="welcome">
-            <p>WELCOME TO MEDLOGE 👋</p>
+        <h1>Welcome Back to Medloge-Enugu</h1>
 
-            <h1 id="welcome-title">Find a place you'll love to live.</h1>
+        <p>Let's get started</p>
 
-            <p>
-                Explore accommodation around UNTH
-                before you arrive.
-            </p>
-        </section>
-
-        <section class="home-search">
-            <h2>Where do you want to stay?</h2>
+        <form id="login-form">
 
             <input
-                type="search"
-                id="home-search"
-                placeholder="Search location or house type"
+                type="text"
+                id="username"
+                placeholder="Enter your username"
             >
 
-            <a href="Find-House.html" class="button">
-                🔍 Explore Houses
-            </a>
-        </section>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+            >
 
-        <section class="home-quick-actions">
-            <h2>Quick Access</h2>
+            <button type="submit">Login</button>
 
-            <div class="quick-action-grid">
-                <a href="Find-House.html">
-                    🏠
-                    <span>Find House</span>
-                </a>
+        </form>
 
-                <a href="Saved.html">
-                    ❤️
-                    <span>Saved Houses</span>
-                </a>
-
-                <a href="Profile.html">
-                    👤
-                    <span>My Profile</span>
-                </a>
-            </div>
-        </section>
-
-        <section class="featured-houses">
-            <div class="section-heading">
-                <h2>Explore Accommodation</h2>
-                <a href="Find-House.html">See all</a>
-            </div>
-
-            <article class="home-house-card">
-
-                <div class="home-house-image">
-                    <img
-                        src="images/ice8.jpg"
-                        alt="Apartment available around UNTH"
-                    >
-                </div>
-
-                <div class="home-house-info">
-                    <h3>Comfortable Student Apartment</h3>
-                    <p>📍 Around UNTH</p>
-                    <p>🏠 Self Contained</p>
-                    <a href="House-Details.html">
-                        View Details →
-                    </a>
-                </div>
-
-            </article>
-
-        </section>
-
-        <section class="why-medloge">
-            <h2>Why Medloge?</h2>
-
-            <p>✓ Explore accommodation in one place.</p>
-            <p>✓ View apartment photos and videos.</p>
-            <p>✓ Compare important property details.</p>
-            <p>✓ Request an inspection before renting.</p>
-        </section>
-
-        <section class="home-coming-soon">
-            <h2>More Coming Soon 🚀</h2>
-
-            <p>
-                We're working towards bringing more useful
-                services to the Medloge community.
-            </p>
-
-            <strong>Ride Services · Food · Laundry and More</strong>
-            <p>Coming Soon — V2</p>
-        </section>
+        <p>
+            New to Medloge?
+            <a href="Account.html">Create Account</a>
+        </p>
 
     </main>
 
-    <nav class="bottom-nav">
-        <a href="Home.html">🏠 Home</a>
-        <a href="Find-House.html">🔍 Houses</a>
-        <a href="Saved.html">❤️ Saved</a>
-        <a href="Profile.html">👤 Profile</a>
-    </nav>
-
     <footer>
-        <p>Medloge-Enugu — Helping students find accommodation around UNTH.</p>
+        Most Trusted House-Rent App for Medical Students
     </footer>
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
